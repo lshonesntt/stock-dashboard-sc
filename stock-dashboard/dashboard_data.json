@@ -21,6 +21,13 @@
     "date": "2026-04-01",
     "source": "FRED/CPIAUCSL"
   },
+  "unemployment": {
+    "value": 4.3,
+    "change": 0,
+    "changePct": 0,
+    "date": "2026-04-01",
+    "source": "FRED/UNRATE"
+  },
   "krkospi": {
     "value": 8476.15,
     "change": 290.86,

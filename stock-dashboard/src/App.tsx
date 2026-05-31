@@ -23,6 +23,7 @@ type Indicator = {
   description: string
   date?: string
   source?: string
+  yahoo?: ApiIndicator | null
 }
 
 interface ApiIndicator {
@@ -57,6 +58,15 @@ function getSignal(ind: Indicator, current: number, changePct: number): 'up' | '
     if (Math.abs(changePct) <= 0.5) return 'neutral'
     return 'down'
   }
+  if (ind.type === 'money_stock') {
+    if (changePct > 0) return 'up'
+    if (changePct < 0) return 'down'
+    return 'neutral'
+  }
+  if (ind.type === 'us_trade') {
+    if (changePct > 0) return 'up' // 적자축소/흑자확대 = 긍정
+    return 'down'
+  }
   return 'neutral'
 }
 
@@ -66,7 +76,9 @@ const US_INDICATORS: Indicator[] = [
   { id: 'usnx', name: '나스닥 종합지수', value: 26972.61, signal: 'up', country: 'US', type: 'index', yahooSymbol: '^IXIC', unit: 'pt', description: '비즈니스 기업 중심의 종합 지수, 정보기술 기업 위주' },
   { id: 'uscpi', name: '소비자물가지수', value: 315.7, signal: 'neutral', country: 'US', type: 'inflation', yahooSymbol: null, unit: '지수', description: '전반적 물가 수준을 나타내는 지표, 연준의 인플레이션 타겟 2% 상회' },
   { id: 'unemployment', name: '실업률', value: 4.3, signal: 'up', country: 'US', type: 'unemployment', yahooSymbol: null, unit: '%', description: '고용시장 상황, 4%대 초중반으로 완만한 고용 유지' },
-  { id: 'usfedrate', name: '미 연방기준금리', value: 4.5, signal: 'neutral', country: 'US', type: 'interest_rate', yahooSymbol: null, unit: '%', description: '미 연준(Fed) 기준금리, 고금리 장기화(3~4%) 추세' },
+   { id: 'usfedrate', name: '미 연방기준금리', value: 4.5, signal: 'neutral', country: 'US', type: 'interest_rate', yahooSymbol: null, unit: '%', description: '미 연준(Fed) 기준금리, 고금리 장기화(3~4%) 추세' },
+   { id: 'us_m2', name: '미국 M2 통화량', value: 20.9, signal: 'up', country: 'US', type: 'money_stock', yahooSymbol: null, unit: '조$', description: '미국 M2 통화 공급량, M1+저축예금+소액시간예금+.MMF (FRED: M2SL)' },
+   { id: 'us_trade_bal', name: '미국 무역수지', value: -750, signal: 'down', country: 'US', type: 'us_trade', yahooSymbol: null, unit: 'B$', description: '미국 월간 무역수지 (수출−수입), 2025.06 기준 약 750B$ 적자 (FRED: BOPGSTB)' },
 ]
 
 const KR_INDICATORS: Indicator[] = [
@@ -77,7 +89,8 @@ const KR_INDICATORS: Indicator[] = [
   { id: 'kr_unemploy', name: '실업률', value: 2.8, signal: 'up', country: 'KR', type: 'unemployment', yahooSymbol: null, unit: '%', description: '15세이상 경제활동인구 중 실업체 비율, 2.8%로 매우 낮음' },
   { id: 'kr_interest', name: '기준금리', value: 3.5, signal: 'neutral', country: 'KR', type: 'interest_rate', yahooSymbol: null, unit: '%', description: '한국은행 기준금리, 3%대 중반으로 고금리 기조 유지' },
   { id: 'kr_exchange', name: '원/달러 환율', value: 1507.13, signal: 'neutral', country: 'KR', type: 'exchange_rate', yahooSymbol: 'USDKRW=X', unit: '원', description: '1달러당 원화 환율, 1,500원대 후반으로 원화 약세' },
-  { id: 'kr_trade', name: '무역수지', value: -2800, signal: 'down', country: 'KR', type: 'trade_balance', yahooSymbol: null, unit: '백만$ ', description: '수출−수입 격차, 2,800억 달러 무역적자 발생' },
+    { id: 'kr_trade', name: '무역수지', value: -2800, signal: 'down', country: 'KR', type: 'trade_balance', yahooSymbol: null, unit: '백만$ ', description: '수출−수입 격차, 2,800억 달러 무역적자 발생' },
+    { id: 'kr_m2', name: '한국 M2 통화량', value: 4303, signal: 'up', country: 'KR', type: 'money_stock', yahooSymbol: null, unit: '조원', description: '한국 M2 통화 공급량, 금융기관 통화예금 합계 (IMF/한국은행, MYAGM2KRM189S)' },
 ]
 
 function getDisplayValue(ind: Indicator, yahoo: ApiIndicator | null): string {
@@ -86,10 +99,13 @@ function getDisplayValue(ind: Indicator, yahoo: ApiIndicator | null): string {
   if (ind.type === 'index') return `${Math.round(displayValue).toLocaleString()}${ind.unit}`
   if (ind.unit === '%') return `${displayValue.toFixed(2)}${ind.unit}`
   if (ind.unit === '지수' || ind.unit === 'pt') return `${displayValue.toFixed(2)}${ind.unit}`
+  if (ind.unit === '조$') return `$${displayValue.toFixed(2)}조`
+  if (ind.unit === '조원') return `₩${displayValue.toFixed(2)}조`
+  if (ind.unit === 'B$') return `$${displayValue.toFixed(1)}B`
   return `${displayValue} ${ind.unit}`
 }
 
-function getChangeText(yahoo: ApiIndicator | null, changePct: number): string {
+function getChangeText(_yahoo: ApiIndicator | null, changePct: number): string {
   const isUp = changePct > 0.001
   const isNeutral = Math.abs(changePct) <= 0.001
   if (changePct === 0) return '0.00%'
@@ -232,7 +248,7 @@ function SummaryBar({ up: upCount, neutral: neutralCount, down: downCount }: {
 function App() {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState<Indicator[]>([])
-  const [apiData, setApiData] = useState<Record<string, ApiIndicator>>({})
+  const [apiData, _setApiData] = useState<Record<string, ApiIndicator>>({})
   const [lastUpdated, setLastUpdated] = useState('')
 
   const fetchAll = async () => {
@@ -373,12 +389,12 @@ function App() {
             gap: 20,
           }}>
              {usData.map(ind => (
-               <IndicatorCard
+                <IndicatorCard
                 key={ind.id}
                 ind={ind}
-                yahoo={ind.yahoo || null}
-               />
-             ))}
+                yahoo={apiData[ind.id] || null}
+                />
+              ))}
           </div>
         </section>
 
@@ -401,13 +417,13 @@ function App() {
             gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
             gap: 20,
           }}>
-             {krData.map(ind => (
-               <IndicatorCard
+              {krData.map(ind => (
+                 <IndicatorCard
                 key={ind.id}
                 ind={ind}
-                yahoo={ind.yahoo || null}
-               />
-             ))}
+                yahoo={apiData[ind.id] || null}
+                 />
+               ))}
           </div>
         </section>
       </main>
