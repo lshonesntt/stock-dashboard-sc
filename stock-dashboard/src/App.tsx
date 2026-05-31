@@ -192,10 +192,11 @@ function App() {
           }),
         ]
 
+      _setApiData(apiDataResponse)
       setData(allData)
       setLastUpdated(new Date().toLocaleString('ko-KR'))
       console.log('✅ Data loaded:', allData.length, 'indicators')
-      } catch (err) {
+       } catch (err) {
       console.error('❌ Fetch error:', err)
       setData([...KR_INDICATORS, ...US_INDICATORS])
       setLastUpdated(new Date().toLocaleString('ko-KR'))
