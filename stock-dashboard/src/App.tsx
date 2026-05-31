@@ -8,52 +8,38 @@ interface Indicator {
   country: 'US' | 'KR'
   fredId?: string
   worldBankId?: string
+  yahooSymbol?: string  // Yahoo Finance symbol for real-time data
   unit: string
   target?: 'up' | 'down' | 'neutral'
   value?: number
   signal?: string
 }
 
-// 한국 경제 지표 (World Bank API 기반)
-// 💡 BOK Open API 연동 시 실시간 데이터 가능: https://data.bok.org.kr
-//    주요 데이터 코드: KY.SMX.Q_KDT (GDP), KCC001 (소비자물가), KSM001 (환율), KCT001 (기준금리)
-const KR_INDICATORS: Omit<Indicator, 'value' | 'signal'>[] = [
-  { id: 'kr_gdp', name: 'GDP Growth Rate', nameKo: '경제성장율', description: 'GDP 전년동기비 변화율. 증가=경기확장, 감소=경기위축', country: 'KR', worldBankId: 'NY.GDP.MKDP.KD.ZG', target: 'up', unit: '%' },
-  { id: 'kr_cpi', name: 'Inflation Rate', nameKo: '물가상승률', description: 'GDP 디플레이터 전년동기비. 2% 목표선 유지=적정 물가안정', country: 'KR', worldBankId: 'NY.GDP.DEFL.KD.ZG', target: 'neutral', unit: '%' },
-  { id: 'kr_unemploy', name: 'Unemployment Rate', nameKo: '실업률', description: '경제활동인구 대비 실업자 비율. 4% 이하=완전고용, 상승=고용악화', country: 'KR', worldBankId: 'SL.UEM.TOTL.ZS', target: 'down', unit: '%' },
-  { id: 'kr_interest', name: 'Base Interest Rate', nameKo: '기준금리', description: '한국은행 기준금리. 상승=긴축정책, 하강=완화정책', country: 'KR', target: 'neutral', unit: '%' },
-  { id: 'kr_exchange', name: 'USD/KRW Exchange Rate', nameKo: '원/달러 환율', description: 'USD 1달러당 원화 환율. 상승=원화약세(수출호조), 하락=원화강세(수입가경)', country: 'KR', target: 'down', unit: '원' },
-  { id: 'kr_trade', name: 'Trade Balance', nameKo: '무역수지', description: '수출액에서 수입액을 제외한 차액. 흑자=외화보존, 적자=순외채누적', country: 'KR', unit: '백만$' },
-]
+// 한국 경제 지표 (Yahoo Finance real-time + World Bank for macro data)
+// 💡 KRX Open API 연동 시 실시간 개인 종목 데이터 가능: https://data.krx.co.kr
+//    API 키: 875D2DA8A6C940D7BFF23955D567686A2E88FC55 (아직 데이터별 이용신청 필요)
 
-// 미국 경제 지표 (FRED + World Bank API 기반)
-const US_INDICATORS: Omit<Indicator, 'value' | 'signal'>[] = [
-  { id: 'm2', name: 'M2 Money Supply', nameKo: 'M2 통화량', description: '시중 통화량. 증가=경기부양, 급증=인플레이션 우려', country: 'US', fredId: 'M2SL', worldBankId: 'FM.LBL.M2.GD.KD.ZG', target: 'neutral', unit: '백만$' },
-  { id: 'unemployment', name: 'Unemployment Rate', nameKo: '실업률', description: '실업률. 4% 이하=완전고용, 상승=고용악화', country: 'US', fredId: 'UNRATE', worldBankId: 'SL.UEM.TOTL.ZS', target: 'down', unit: '%' },
-  { id: 'cpi', name: 'CPI Inflation', nameKo: '소비자물가지수', description: '소비자물가 전년동기비 변화율. 상승=인플레이션', country: 'US', fredId: 'CPIAUCSL', worldBankId: 'KY.ENX.PCEP.KD.ZG', target: 'neutral', unit: '지수' },
-  { id: 'gdp', name: 'GDP Growth', nameKo: '경제성장율', description: 'GDP 전년동기비 변화율. 증가=경기확장', country: 'US', fredId: 'A191RL1Q225SBEA', worldBankId: 'NY.GDP.MKDP.KD.ZG', target: 'up', unit: '%' },
-  { id: 'govt_debt', name: 'Federal Debt', nameKo: '정부부채', description: '연방정부 공식채무. 증가=재정적자 확대', country: 'US', fredId: 'GSDSLA188S', worldBankId: 'GC.DOD.TOTL.KD.ZG', target: 'down', unit: '백만$' },
-  { id: 'trade', name: 'Trade Balance', nameKo: '무역수지', description: '수출입차액. 음수=무역적자', country: 'US', fredId: 'BOPGSTB03S', worldBankId: 'TM.TSV.GSRV.KD.ZG', target: 'neutral', unit: '백만$' },
-]
+// 미국 경제 지표 (Yahoo Finance real-time + World Bank for macro data)
 
-// 한국 경제 패백 데이터 (2024년 기준 추정치)
+// 한국 경제 패백 데이터 (2024년 기준)
 const KR_FALLBACK: Indicator[] = [
-  { id: 'kr_gdp', name: 'GDP Growth Rate', nameKo: '경제성장율', country: 'KR', description: 'GDP 전년동기비 변화율. 증가=경기확장', worldBankId: 'NY.GDP.MKDP.KD.ZG', target: 'up', unit: '%', value: 2.5, signal: 'up' },
-  { id: 'kr_cpi', name: 'Inflation Rate', nameKo: '물가상승률', country: 'KR', description: 'GDP 디플레이터 전년동기비. 2% 목표선 유지=적정 물가안정', worldBankId: 'NY.GDP.DEFL.KD.ZG', target: 'neutral', unit: '%', value: 2.2, signal: 'neutral' },
-  { id: 'kr_unemploy', name: 'Unemployment Rate', nameKo: '실업률', country: 'KR', description: '경제활동인구 대비 실업자 비율. 4% 이하=완전고용, 상승=고용악화', worldBankId: 'SL.UEM.TOTL.ZS', target: 'down', unit: '%', value: 2.8, signal: 'up' },
-  { id: 'kr_interest', name: 'Base Interest Rate', nameKo: '기준금리', country: 'KR', description: '한국은행 기준금리. 상승=긴축정책, 하강=완화정책', target: 'neutral', unit: '%', value: 3.5, signal: 'neutral' },
-  { id: 'kr_exchange', name: 'USD/KRW Exchange Rate', nameKo: '원/달러 환율', country: 'KR', description: 'USD 1달러당 원화 환율. 상승=원화약세(수출호조), 하락=원화강세(수입가경)', target: 'down', unit: '원', value: 1350, signal: 'down' },
-  { id: 'kr_trade', name: 'Trade Balance', nameKo: '무역수지', country: 'KR', description: '수출액에서 수입액을 제외한 차액. 흑자=외화보존, 적자=순외채누적', unit: '백만$', value: -2800, signal: 'down' },
+  { id: 'krkospi', name: 'KOSPI Index', nameKo: 'KOSPI 지수', country: 'KR', description: '한국 주식시장의 대표적인 종합지수', yahooSymbol: '^KS11', target: 'up', unit: 'point', value: 8500, signal: 'up' },
+  { id: 'kr_samsung', name: 'Samsung Electronics', nameKo: '삼성전자', country: 'KR', description: '한국 대표 기술주', yahooSymbol: '005930.KS', target: 'up', unit: 'W', value: 317000, signal: 'up' },
+  { id: 'kr_cpi', name: 'Inflation Rate', nameKo: '물가상승률', country: 'KR', description: 'GDP 디플레이터 전년동기비', worldBankId: 'NY.GDP.DEFL.KD.ZG', target: 'neutral', unit: '%', value: 2.2, signal: 'neutral' },
+  { id: 'kr_unemploy', name: 'Unemployment Rate', nameKo: '실업률', country: 'KR', description: '경제활동인구 대비 실업자 비율', worldBankId: 'SL.UEM.TOTL.ZS', target: 'down', unit: '%', value: 2.8, signal: 'up' },
+  { id: 'kr_interest', name: 'Base Interest Rate', nameKo: '기준금리', country: 'KR', description: '한국은행 기준금리', target: 'neutral', unit: '%', value: 3.5, signal: 'neutral' },
+  { id: 'kr_exchange', name: 'USD/KRW', nameKo: '원/달러 환율', country: 'KR', description: 'USD 1달러당 원화 환율', yahooSymbol: 'USDKRW=X', target: 'down', unit: '원', value: 1350, signal: 'down' },
+  { id: 'kr_trade', name: 'Trade Balance', nameKo: '무역수지', country: 'KR', description: '수출액에서 수입액을 제외한 차액', unit: '백만$', value: -2800, signal: 'down' },
 ]
 
 // 미국 경제 패백 데이터
 const US_FALLBACK: Indicator[] = [
-  { id: 'm2', name: 'M2 Money Supply', nameKo: 'M2 통화량', country: 'US', description: '시중 통화량. 증가=경기부양', worldBankId: 'FM.LBL.M2.GD.KD.ZG', unit: '백만$', value: 21086, signal: 'neutral', target: 'neutral' },
-  { id: 'unemployment', name: 'Unemployment Rate', nameKo: '실업률', country: 'US', description: '실업률. 4% 이하=완전고용', worldBankId: 'SL.UEM.TOTL.ZS', unit: '%', value: 4.3, signal: 'down', target: 'down' },
-  { id: 'cpi', name: 'CPI Inflation', nameKo: '소비자물가지수', country: 'US', description: '물가상승률', worldBankId: 'KY.ENX.PCEP.KD.ZG', unit: '지수', value: 315.7, signal: 'down', target: 'neutral' },
-  { id: 'gdp', name: 'GDP Growth', nameKo: '경제성장율', country: 'US', description: 'GDP 전년동기비', worldBankId: 'NY.GDP.MKDP.KD.ZG', unit: '%', value: 3.1, signal: 'up', target: 'up' },
-  { id: 'govt_debt', name: 'Federal Debt', nameKo: '정부부채', country: 'US', description: '연방정부 공식채무', worldBankId: 'GC.DOD.TOTL.KD.ZG', unit: '백만$', value: 36500, signal: 'down', target: 'down' },
-  { id: 'trade', name: 'Trade Balance', nameKo: '무역수지', country: 'US', description: '수출입차액', worldBankId: 'TM.TSV.GSRV.KD.ZG', unit: '백만$', value: -784, signal: 'down', target: 'neutral' },
+  { id: 'usp500', name: 'S&P 500', nameKo: 'S&P 500', country: 'US', description: '미국 대형주 500개 지수', yahooSymbol: '^GSPC', target: 'up', unit: 'point', value: 6000, signal: 'up' },
+  { id: 'usdjwr', name: 'Dow Jones', nameKo: '다우 존스', country: 'US', description: '미국 산업대표 30개 종목 지수', yahooSymbol: '^DJI', target: 'up', unit: 'point', value: 44000, signal: 'up' },
+  { id: 'usnx', name: 'NASDAQ', nameKo: '나스닥', country: 'US', description: '기술주 중심 지수', yahooSymbol: '^IXIC', target: 'up', unit: 'point', value: 19500, signal: 'up' },
+  { id: 'uscpi', name: 'CPI Inflation', nameKo: '소비자물가지수', country: 'US', description: '소비자물가 전년동기비', worldBankId: 'KY.ENX.PCEP.KD.ZG', unit: '지수', value: 315.7, signal: 'down', target: 'neutral' },
+  { id: 'unemployment', name: 'Unemployment Rate', nameKo: '실업률', country: 'US', description: '실업률', worldBankId: 'SL.UEM.TOTL.ZS', unit: '%', value: 4.3, signal: 'down', target: 'down' },
+  { id: 'usfedrate', name: 'Fed Funds Rate', nameKo: '미 연방기준금리', country: 'US', description: '미 연준 기준금리', target: 'neutral', unit: '%', value: 4.5, signal: 'neutral' },
 ]
 
 const COLORS: Record<string, string> = {
@@ -69,57 +55,58 @@ function getSignal(ind: Indicator, value: number): string {
   return 'neutral'
 }
 
-async function fetchIndicatorWorldBank(country: string, indicatorId: string): Promise<number | null> {
+async function fetchYahooFinance(symbol: string): Promise<{ current: number; change: number; changePct: number } | null> {
   try {
-    const url = `https://api.worldbank.org/v2/country/${country}/indicator/${indicatorId}?date=2023:2024&per_page=1&format=json`
-    const controller = new AbortController()
-    const timeout = setTimeout(() => controller.abort(), 3000)
-    const res = await fetch(url, { signal: controller.signal })
-    clearTimeout(timeout)
+    // Use Vite proxy to avoid CORS
+    const url = `/api/yfinance/chart/${encodeURIComponent(symbol)}?interval=1d&range=1d`
+    const res = await fetch(url)
+    if (!res.ok) return null
     const json = await res.json()
-    if (json[1]?.[0]) {
-      const v = parseFloat(json[1][0].value || '0')
-      return isNaN(v) ? 0 : v
-      }
+    const result = json?.chart?.result?.[0]
+    if (!result) return null
+    const close = result.indicators?.quote?.[0]?.close
+    if (!close || close.length === 0) return null
+    const current = close[close.length - 1]
+    if (!current || isNaN(current)) return null
+    const meta = result.meta
+    const previousClose = meta?.regularMarketPreviousClose || meta?.chartPreviousClose || 0
+    const change = current - previousClose
+    const changePct = previousClose ? (change / previousClose) * 100 : 0
+    return { current, change, changePct }
+  } catch {
     return null
-    } catch { return null }
-}
-
-async function fetchIndicatorGlobalWorldBank(indicatorId: string): Promise<number | null> {
-  try {
-    const url = `https://api.worldbank.org/v2/indicator/${indicatorId}?date=2023:2024&per_page=10&format=json`
-    const controller = new AbortController()
-    const timeout = setTimeout(() => controller.abort(), 3000)
-    const res = await fetch(url, { signal: controller.signal })
-    clearTimeout(timeout)
-    const json = await res.json()
-    if (json[1]?.[0]) {
-      const v = parseFloat(json[1][0].value || '0')
-      return isNaN(v) ? 0 : v
-      }
-    return null
-    } catch { return null }
+  }
 }
 
 function formatValue(ind: Indicator, displayValue: number): string {
   if (ind.id === 'kr_exchange') {
     return `${Math.round(displayValue).toLocaleString()} ${ind.unit}`
   }
-  const isCurrency = ['m2', 'govt_debt', 'trade', 'kr_trade'].includes(ind.id)
+  if (ind.id === 'kr_samsung') {
+    return `${Math.round(displayValue).toLocaleString()} ${ind.unit}`
+  }
+  const isCurrency = ['usp500', 'usdjwr', 'usnx', 'uscpi', 'govt_debt', 'trade', 'kr_trade'].includes(ind.id)
   if (isCurrency) {
     if (displayValue >= 1000) {
-      return `${(displayValue / 1000).toFixed(1)}${ind.unit === '백만$' ? 'T' : ind.unit}`
+      return `${(displayValue / 1000).toFixed(1)}${ind.unit === '백만$' ? 'T' : ''}${ind.unit}`
     }
-    return `${displayValue}${ind.unit}`
+    return `${Math.round(displayValue)}${ind.unit}`
   }
-  return displayValue.toFixed(2) + (ind.unit === '%' ? '%' : ` ${ind.unit}`)
+  if (ind.yahooSymbol) {
+    // Yahoo Finance data - show with decimals
+    return displayValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ` ${ind.unit === 'W' ? '만원' : ind.unit}`
+  }
+  return displayValue.toFixed(2) + (ind.unit === '%' || ind.unit === '점' ? '%' : ind.unit === '원' ? '원' : ` ${ind.unit}`)
 }
 
-function IndicatorCard({ ind }: { ind: Indicator }) {
+function IndicatorCard({ ind, yahooData }: { ind: Indicator; yahooData: { current: number; change: number; changePct: number } | null }) {
   const color = COLORS[ind.signal ?? 'neutral']
   const flag = ind.country === 'KR' ? '🇰🇷' : '🇺🇸'
-  const displayValue = ind.value ?? 0
+  const displayValue = yahooData?.current ?? ind.value ?? 0
   const formatted = formatValue(ind, displayValue)
+  const changePct = yahooData?.changePct ?? 0
+  const isUp = changePct > 0
+  const chartColor = isUp ? '#ff6b6b' : '#4ecdc4'
 
   return (
     <div style={{
@@ -132,12 +119,12 @@ function IndicatorCard({ ind }: { ind: Indicator }) {
       cursor: 'default',
     }}
     onMouseEnter={(e) => {
-      e.currentTarget.style.transform = 'translateY(-4px)'
+     e.currentTarget.style.transform = 'translateY(-4px)'
       e.currentTarget.style.boxShadow = `0 12px 40px ${color}22`
       e.currentTarget.style.borderColor = color
     }}
     onMouseLeave={(e) => {
-      e.currentTarget.style.transform = 'translateY(0)'
+     e.currentTarget.style.transform = 'translateY(0)'
       e.currentTarget.style.boxShadow = 'none'
       e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
     }}
@@ -153,6 +140,19 @@ function IndicatorCard({ ind }: { ind: Indicator }) {
         <h3 style={{ fontSize: 18, fontWeight: 600, margin: 0, color: '#e6edf3' }}>
           {ind.nameKo}
         </h3>
+        {yahooData && (
+          <span style={{
+            marginLeft: 'auto',
+            fontSize: 14,
+            fontWeight: 600,
+            color: chartColor,
+            background: `${chartColor}15`,
+            padding: '4px 12px',
+            borderRadius: 20,
+          }}>
+            {isUp ? '▲' : '▼'} {Math.abs(changePct).toFixed(2)}%
+          </span>
+        )}
       </div>
 
       <div style={{
@@ -164,6 +164,17 @@ function IndicatorCard({ ind }: { ind: Indicator }) {
       }}>
         {formatted}
       </div>
+
+      {yahooData && (
+        <div style={{
+          fontSize: 14,
+          color: chartColor,
+          marginBottom: 8,
+          fontWeight: 500,
+        }}>
+          {isUp ? '▲' : '▼'} {Math.abs(yahooData.change).toFixed(2)} ({isUp ? '상승' : '하락'})
+        </div>
+      )}
 
       <p style={{
         color: '#8b949e',
@@ -192,37 +203,58 @@ function LoadingState() {
     }}>
       <div style={{ fontSize: 48, marginBottom: 16, animation: 'spin 1s linear infinite' }}>⏳</div>
       <h2 style={{ fontSize: 24, marginBottom: 8 }}>🇺🇸🇰🇷 한미 경제 신호등</h2>
-      <p style={{ color: '#8b949e' }}>데이터를 로딩 중...</p>
+       <p style={{ color: '#8b949e' }}>실시간 데이터를 로딩 중...</p>
+       <p style={{ color: '#8b949e', fontSize: 12, marginTop: 8 }}>Yahoo Finance API 연동 중</p>
     </div>
   )
 }
 
 export default function App() {
   const [data, setData] = useState<Indicator[]>([])
+  const [yahooDataMap, setYahooDataMap] = useState<Record<string, { current: number; change: number; changePct: number }>>({})
   const [loading, setLoading] = useState(true)
   const [lastUpdated, setLastUpdated] = useState('')
 
   const fetchAll = async () => {
     try {
       setLoading(true)
+      const allIndicators = [...KR_FALLBACK, ...US_FALLBACK]
+      const allYahooSymbols = allIndicators.filter(i => i.yahooSymbol).map(i => (i.yahooSymbol!))
+      
+      // Fetch Yahoo Finance data for symbols
+      const yahooResults: Record<string, { current: number; change: number; changePct: number }> = {}
+      for (const symbol of allYahooSymbols) {
+        const data = await fetchYahooFinance(symbol)
+        if (data) {
+          yahooResults[symbol] = data
+        }
+      }
+      setYahooDataMap(yahooResults)
+
+      // Build final data
       const results: Indicator[] = []
       const fallbackData = [...US_FALLBACK, ...KR_FALLBACK]
+      
+      for (const ind of fallbackData) {
+        let value = ind.value ?? 0
+        if (ind.yahooSymbol && yahooResults[ind.yahooSymbol]) {
+          value = yahooResults[ind.yahooSymbol].current
+        }
+        results.push({ ...ind, value, signal: ind.target ? getSignal(ind, value) : ind.signal })
+      }
 
-      // World Bank API 대신 fallback immediately
-      // (브라우저 CORS 문제로 API 호출이 안 돼서)
-      results.push(...fallbackData)
       setData(results)
       setLastUpdated(new Date().toLocaleString('ko-KR'))
-      console.log('Data loaded from fallback:', results.length, 'indicators')
-     } catch (err) {
+      console.log('Data loaded with Yahoo Finance:', results.length, 'indicators')
+    } catch (err) {
       console.error('Fetch error:', err)
       const fallbackData = [...US_FALLBACK, ...KR_FALLBACK]
       setData(fallbackData)
       setLastUpdated(new Date().toLocaleString('ko-KR'))
-     } finally {
+    } finally {
       setLoading(false)
-     }
-   }
+    }
+  }
 
   useEffect(() => {
     fetchAll()
@@ -281,11 +313,11 @@ export default function App() {
           fontSize: 15,
           position: 'relative',
           zIndex: 1,
-        }}>FRED, World Bank 데이터 기반 경제 지표 대시보드</p>
+        }}>Yahoo Finance + World Bank 기반 실시간 경제 지표 대시보드</p>
         
         {/* Overall Signals */}
         <div style={{ marginTop: 24, position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'center', gap: 32, flexWrap: 'wrap' }}>
-          {/* 미국 신호 */}
+          {/* US Signal */}
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -307,7 +339,7 @@ export default function App() {
             </span>
           </div>
           
-          {/* 한국 신호 */}
+          {/* KR Signal */}
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -350,7 +382,7 @@ export default function App() {
           gap: 20,
         }}>
           {usData.map(ind => (
-            <IndicatorCard key={ind.id} ind={ind} />
+            <IndicatorCard key={ind.id} ind={ind} yahooData={yahooDataMap[findYahooSymbol(ind) ?? ''] ?? null} />
           ))}
         </div>
       </main>
@@ -375,7 +407,7 @@ export default function App() {
           marginBottom: 40,
         }}>
           {krData.map(ind => (
-            <IndicatorCard key={ind.id} ind={ind} />
+            <IndicatorCard key={ind.id} ind={ind} yahooData={yahooDataMap[findYahooSymbol(ind) ?? ''] ?? null} />
           ))}
         </div>
       </main>
@@ -389,8 +421,8 @@ export default function App() {
         borderTop: '1px solid rgba(255,255,255,0.06)',
         marginTop: 20,
       }}>
-        <p>Data: FRED (fred.stlouisfed.org), World Bank Open Data</p>
-        <p style={{ marginTop: 4 }}>한국 경제 지표: World Bank, 💡 BOK Open API 연동 권장 (https://data.bok.org.kr)</p>
+        <p>Data sources: Yahoo Finance (real-time), World Bank Open Data</p>
+        <p style={{ marginTop: 4 }}>KRX API 연동 예정 (API 키: 875D2DA8A6C940D7BFF23955D567686A2E88FC55 | 데이터별 이용신청 시 활성화)</p>
         <p style={{ marginTop: 6 }}>마지막 업데이트: {lastUpdated}</p>
       </footer>
 
@@ -402,4 +434,8 @@ export default function App() {
       `}</style>
     </div>
   )
+}
+
+function findYahooSymbol(ind: Indicator): string | null {
+  return ind.yahooSymbol ?? null
 }
