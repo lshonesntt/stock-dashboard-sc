@@ -1,0 +1,2692 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		683D3DBB2DEFAD9F00C71907 /* Everything */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 683D3DBE2DEFAD9F00C71907 /* Build configuration list for PBXAggregateTarget "Everything" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = Everything;
+			packageProductDependencies = (
+			);
+			productName = Everything;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		682E003D2DEFA49E003F1F36 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		682E003E2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		682E00422DEFA4C3003F1F36 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		682E00432DEFA4C3003F1F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3DC12DEFADA800C71907 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		683D3DC22DEFADA800C71907 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		683D3DC32DEFADA800C71907 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		683D3DC62DEFADA800C71907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3DC72DEFADA800C71907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		683D3DCF2DEFADA900C71907 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		683D3DD02DEFADA900C71907 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		683D3DD12DEFADA900C71907 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		683D3DD42DEFADA900C71907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3DD52DEFADA900C71907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		683D3DDD2DEFADA900C71907 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		683D3DDE2DEFADA900C71907 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		683D3DDF2DEFADA900C71907 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		683D3DE22DEFADA900C71907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3DE32DEFADA900C71907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		683D3DEB2DEFADA900C71907 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		683D3DEC2DEFADA900C71907 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		683D3DED2DEFADA900C71907 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		683D3DF02DEFADA900C71907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3DF12DEFADA900C71907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		683D3DF92DEFADA900C71907 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		683D3DFA2DEFADA900C71907 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		683D3DFB2DEFADA900C71907 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		683D3DFE2DEFADA900C71907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3DFF2DEFADA900C71907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		683D3E072DEFADAA00C71907 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		683D3E082DEFADAA00C71907 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		683D3E092DEFADAA00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		683D3E0C2DEFADAA00C71907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3E0D2DEFADAA00C71907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		683D3E152DEFADAC00C71907 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		683D3E162DEFADAC00C71907 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		683D3E172DEFADAC00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		683D3E1A2DEFADAC00C71907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3E1B2DEFADAC00C71907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		683D3E232DEFADAC00C71907 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		683D3E242DEFADAC00C71907 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		683D3E252DEFADAC00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		683D3E282DEFADAC00C71907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3E292DEFADAC00C71907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		683D3E312DEFADAC00C71907 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		683D3E322DEFADAC00C71907 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		683D3E332DEFADAC00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		683D3E362DEFADAC00C71907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3E372DEFADAC00C71907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		683D3E3F2DEFADAC00C71907 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		683D3E402DEFADAC00C71907 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		683D3E412DEFADAC00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		683D3E442DEFADAC00C71907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3E452DEFADAC00C71907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		683D3E4D2DEFADAC00C71907 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		683D3E4E2DEFADAC00C71907 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		683D3E4F2DEFADAC00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		683D3E522DEFADAC00C71907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		683D3E532DEFADAC00C71907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		6840BE012DEFA31B00AE2B5D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		689A0BF62DFCD03100844A09 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		689A0BF72DFCD03100844A09 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		689A0BF82DFCD03100844A09 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		689A0BFB2DFCD03100844A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		689A0BFC2DFCD03100844A09 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		689A0C062DFCD04300844A09 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		689A0C072DFCD04300844A09 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		689A0C082DFCD04300844A09 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		689A0C0B2DFCD04300844A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		689A0C0C2DFCD04300844A09 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		689A0C162DFCD04800844A09 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		689A0C172DFCD04800844A09 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		689A0C182DFCD04800844A09 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		689A0C1B2DFCD04800844A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		689A0C1C2DFCD04800844A09 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+		689A0C262DFCD05100844A09 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 682E00402DEFA4C3003F1F36 /* Shaders.metal */; };
+		689A0C272DFCD05100844A09 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003B2DEFA49E003F1F36 /* AppModel.swift */; };
+		689A0C282DFCD05100844A09 /* ToggleImmersiveSpaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */; };
+		689A0C2B2DFCD05100844A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E003F2DEFA4C3003F1F36 /* Assets.xcassets */; };
+		689A0C2C2DFCD05100844A09 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6840BE002DEFA31B00AE2B5D /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		682E003B2DEFA49E003F1F36 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppModel.swift; path = "../../../../MultiPlatform/Application/Immersive Space App.xctemplate/AppModel.swift"; sourceTree = SOURCE_ROOT; };
+		682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToggleImmersiveSpaceButton.swift; path = "../../../../MultiPlatform/Application/Immersive Space App.xctemplate/ToggleImmersiveSpaceButton.swift"; sourceTree = SOURCE_ROOT; };
+		682E003F2DEFA4C3003F1F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../MultiPlatform/Application/Compositor Services.xctemplate/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		682E00402DEFA4C3003F1F36 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; name = Shaders.metal; path = "../../../../MultiPlatform/Application/Compositor Services.xctemplate/Shaders.metal"; sourceTree = SOURCE_ROOT; };
+		682E00412DEFA4C3003F1F36 /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShaderTypes.h; path = "../../../../MultiPlatform/Application/Compositor Services.xctemplate/ShaderTypes.h"; sourceTree = SOURCE_ROOT; };
+		682E00482DEFA542003F1F36 /* Volume-MTL3-Mixed.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Volume-MTL3-Mixed.xcconfig"; sourceTree = "<group>"; };
+		682E00492DEFA5CC003F1F36 /* Volume-MTL3-Full.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Volume-MTL3-Full.xcconfig"; sourceTree = "<group>"; };
+		682E004A2DEFA5CC003F1F36 /* Volume-MTL3-Progressive.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Volume-MTL3-Progressive.xcconfig"; sourceTree = "<group>"; };
+		682E004E2DEFA5EA003F1F36 /* Volume-MTL4-Mixed.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Volume-MTL4-Mixed.xcconfig"; sourceTree = "<group>"; };
+		682E004F2DEFA5EA003F1F36 /* Volume-MTL4-Full.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Volume-MTL4-Full.xcconfig"; sourceTree = "<group>"; };
+		682E00502DEFA5EA003F1F36 /* Volume-MTL4-Progressive.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Volume-MTL4-Progressive.xcconfig"; sourceTree = "<group>"; };
+		682E00512DEFA5FD003F1F36 /* Window-MTL3-Mixed.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Window-MTL3-Mixed.xcconfig"; sourceTree = "<group>"; };
+		682E00522DEFA5FD003F1F36 /* Window-MTL3-Full.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Window-MTL3-Full.xcconfig"; sourceTree = "<group>"; };
+		682E00532DEFA5FD003F1F36 /* Window-MTL3-Progressive.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Window-MTL3-Progressive.xcconfig"; sourceTree = "<group>"; };
+		682E00542DEFA5FD003F1F36 /* Window-MTL4-Mixed.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Window-MTL4-Mixed.xcconfig"; sourceTree = "<group>"; };
+		682E00552DEFA5FD003F1F36 /* Window-MTL4-Full.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Window-MTL4-Full.xcconfig"; sourceTree = "<group>"; };
+		682E00562DEFA5FD003F1F36 /* Window-MTL4-Progressive.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Window-MTL4-Progressive.xcconfig"; sourceTree = "<group>"; };
+		683D3DCB2DEFADA800C71907 /* Volume-MTL3-Mixed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volume-MTL3-Mixed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D3DD92DEFADA900C71907 /* Volume-MTL3-Progressive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volume-MTL3-Progressive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D3DE72DEFADA900C71907 /* Volume-MTL4-Full.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volume-MTL4-Full.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D3DF52DEFADA900C71907 /* Volume-MTL4-Mixed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volume-MTL4-Mixed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D3E032DEFADA900C71907 /* Volume-MTL4-Progressive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volume-MTL4-Progressive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D3E112DEFADAA00C71907 /* Window-MTL3-Full.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Window-MTL3-Full.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D3E1F2DEFADAC00C71907 /* Window-MTL3-Mixed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Window-MTL3-Mixed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D3E2D2DEFADAC00C71907 /* Window-MTL3-Progressive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Window-MTL3-Progressive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D3E3B2DEFADAC00C71907 /* Window-MTL4-Full.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Window-MTL4-Full.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D3E492DEFADAC00C71907 /* Window-MTL4-Mixed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Window-MTL4-Mixed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D3E572DEFADAC00C71907 /* Window-MTL4-Progressive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Window-MTL4-Progressive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		683D3E592DEFAE8C00C71907 /* BaseConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseConfig.xcconfig; sourceTree = "<group>"; };
+		6840BDDF2DEFA29A00AE2B5D /* Volume-MTL3-Full.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volume-MTL3-Full.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6840BE002DEFA31B00AE2B5D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		689A0C012DFCD03100844A09 /* macOS-MTL3-Full.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS-MTL3-Full.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		689A0C112DFCD04300844A09 /* macOS-MTL3-Progressive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS-MTL3-Progressive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		689A0C212DFCD04800844A09 /* macOS-MTL4-Full.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS-MTL4-Full.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		689A0C312DFCD05100844A09 /* macOS-MTL4-Progressive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS-MTL4-Progressive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		689A0C342DFCD05C00844A09 /* macOS-MTL3-Full.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS-MTL3-Full.xcconfig"; sourceTree = "<group>"; };
+		689A0C352DFCD05D00844A09 /* macOS-MTL3-Progressive.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS-MTL3-Progressive.xcconfig"; sourceTree = "<group>"; };
+		689A0C362DFCD05E00844A09 /* macOS-MTL4-Progressive.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS-MTL4-Progressive.xcconfig"; sourceTree = "<group>"; };
+		689A0C372DFCD0A700844A09 /* macOS-MTL4-Full.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS-MTL4-Full.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		683D3DCC2DEFADA800C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL3-Mixed" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 683D3DBF2DEFADA800C71907 /* Volume-MTL3-Mixed */;
+		};
+		683D3DDA2DEFADA900C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL3-Progressive" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 683D3DCD2DEFADA900C71907 /* Volume-MTL3-Progressive */;
+		};
+		683D3DE82DEFADA900C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL4-Full" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 683D3DDB2DEFADA900C71907 /* Volume-MTL4-Full */;
+		};
+		683D3DF62DEFADA900C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL4-Mixed" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 683D3DE92DEFADA900C71907 /* Volume-MTL4-Mixed */;
+		};
+		683D3E042DEFADA900C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL4-Progressive" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 683D3DF72DEFADA900C71907 /* Volume-MTL4-Progressive */;
+		};
+		683D3E122DEFADAA00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL3-Full" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 683D3E052DEFADAA00C71907 /* Window-MTL3-Full */;
+		};
+		683D3E202DEFADAC00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL3-Mixed" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 683D3E132DEFADAC00C71907 /* Window-MTL3-Mixed */;
+		};
+		683D3E2E2DEFADAC00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL3-Progressive" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 683D3E212DEFADAC00C71907 /* Window-MTL3-Progressive */;
+		};
+		683D3E3C2DEFADAC00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL4-Full" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 683D3E2F2DEFADAC00C71907 /* Window-MTL4-Full */;
+		};
+		683D3E4A2DEFADAC00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL4-Mixed" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 683D3E3D2DEFADAC00C71907 /* Window-MTL4-Mixed */;
+		};
+		683D3E582DEFADAC00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL4-Progressive" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 683D3E4B2DEFADAC00C71907 /* Window-MTL4-Progressive */;
+		};
+		6840BDF62DEFA29C00AE2B5D /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL3-Full" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 6840BDDE2DEFA29A00AE2B5D /* Volume-MTL3-Full */;
+		};
+		689A0C022DFCD03100844A09 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "macOS-MTL3-Full" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 689A0BF42DFCD03100844A09 /* macOS-MTL3-Full */;
+		};
+		689A0C122DFCD04300844A09 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "macOS-MTL3-Progressive" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 689A0C042DFCD04300844A09 /* macOS-MTL3-Progressive */;
+		};
+		689A0C222DFCD04800844A09 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "macOS-MTL4-Full" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 689A0C142DFCD04800844A09 /* macOS-MTL4-Full */;
+		};
+		689A0C322DFCD05100844A09 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "macOS-MTL4-Progressive" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SupportingFiles/GenerateTemplate.swift,
+				SupportingFiles/Info.plist,
+			);
+			target = 689A0C242DFCD05100844A09 /* macOS-MTL4-Progressive */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6840BDF62DEFA29C00AE2B5D /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL3-Full" target */,
+				683D3DCC2DEFADA800C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL3-Mixed" target */,
+				683D3DDA2DEFADA900C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL3-Progressive" target */,
+				683D3DE82DEFADA900C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL4-Full" target */,
+				683D3DF62DEFADA900C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL4-Mixed" target */,
+				683D3E042DEFADA900C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Volume-MTL4-Progressive" target */,
+				683D3E122DEFADAA00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL3-Full" target */,
+				683D3E202DEFADAC00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL3-Mixed" target */,
+				683D3E2E2DEFADAC00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL3-Progressive" target */,
+				683D3E3C2DEFADAC00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL4-Full" target */,
+				683D3E4A2DEFADAC00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL4-Mixed" target */,
+				683D3E582DEFADAC00C71907 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "Window-MTL4-Progressive" target */,
+				689A0C022DFCD03100844A09 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "macOS-MTL3-Full" target */,
+				689A0C122DFCD04300844A09 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "macOS-MTL3-Progressive" target */,
+				689A0C222DFCD04800844A09 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "macOS-MTL4-Full" target */,
+				689A0C322DFCD05100844A09 /* Exceptions for "CompositorServices_XcodeTemplates" folder in "macOS-MTL4-Progressive" target */,
+			);
+			path = CompositorServices_XcodeTemplates;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		683D3DC42DEFADA800C71907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DD22DEFADA900C71907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DE02DEFADA900C71907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DEE2DEFADA900C71907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DFC2DEFADA900C71907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E0A2DEFADAA00C71907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E182DEFADAC00C71907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E262DEFADAC00C71907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E342DEFADAC00C71907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E422DEFADAC00C71907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E502DEFADAC00C71907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6840BDDC2DEFA29A00AE2B5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0BF92DFCD03100844A09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0C092DFCD04300844A09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0C192DFCD04800844A09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0C292DFCD05100844A09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		682E00442DEFA4D0003F1F36 /* Reference Files */ = {
+			isa = PBXGroup;
+			children = (
+				682E003B2DEFA49E003F1F36 /* AppModel.swift */,
+				682E003C2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift */,
+				682E003F2DEFA4C3003F1F36 /* Assets.xcassets */,
+				682E00402DEFA4C3003F1F36 /* Shaders.metal */,
+				682E00412DEFA4C3003F1F36 /* ShaderTypes.h */,
+			);
+			name = "Reference Files";
+			sourceTree = "<group>";
+		};
+		682E00452DEFA4E2003F1F36 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				683D3E592DEFAE8C00C71907 /* BaseConfig.xcconfig */,
+				682E00492DEFA5CC003F1F36 /* Volume-MTL3-Full.xcconfig */,
+				682E00482DEFA542003F1F36 /* Volume-MTL3-Mixed.xcconfig */,
+				682E004A2DEFA5CC003F1F36 /* Volume-MTL3-Progressive.xcconfig */,
+				682E004F2DEFA5EA003F1F36 /* Volume-MTL4-Full.xcconfig */,
+				682E004E2DEFA5EA003F1F36 /* Volume-MTL4-Mixed.xcconfig */,
+				682E00502DEFA5EA003F1F36 /* Volume-MTL4-Progressive.xcconfig */,
+				682E00522DEFA5FD003F1F36 /* Window-MTL3-Full.xcconfig */,
+				682E00512DEFA5FD003F1F36 /* Window-MTL3-Mixed.xcconfig */,
+				682E00532DEFA5FD003F1F36 /* Window-MTL3-Progressive.xcconfig */,
+				682E00552DEFA5FD003F1F36 /* Window-MTL4-Full.xcconfig */,
+				682E00542DEFA5FD003F1F36 /* Window-MTL4-Mixed.xcconfig */,
+				682E00562DEFA5FD003F1F36 /* Window-MTL4-Progressive.xcconfig */,
+				689A0C342DFCD05C00844A09 /* macOS-MTL3-Full.xcconfig */,
+				689A0C352DFCD05D00844A09 /* macOS-MTL3-Progressive.xcconfig */,
+				689A0C372DFCD0A700844A09 /* macOS-MTL4-Full.xcconfig */,
+				689A0C362DFCD05E00844A09 /* macOS-MTL4-Progressive.xcconfig */,
+			);
+			path = xcconfig;
+			sourceTree = "<group>";
+		};
+		6840BDD62DEFA29A00AE2B5D = {
+			isa = PBXGroup;
+			children = (
+				6840BE002DEFA31B00AE2B5D /* README.md */,
+				682E00452DEFA4E2003F1F36 /* xcconfig */,
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+				6840BDE02DEFA29A00AE2B5D /* Products */,
+				682E00442DEFA4D0003F1F36 /* Reference Files */,
+			);
+			sourceTree = "<group>";
+		};
+		6840BDE02DEFA29A00AE2B5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6840BDDF2DEFA29A00AE2B5D /* Volume-MTL3-Full.app */,
+				683D3DCB2DEFADA800C71907 /* Volume-MTL3-Mixed.app */,
+				683D3DD92DEFADA900C71907 /* Volume-MTL3-Progressive.app */,
+				683D3DE72DEFADA900C71907 /* Volume-MTL4-Full.app */,
+				683D3DF52DEFADA900C71907 /* Volume-MTL4-Mixed.app */,
+				683D3E032DEFADA900C71907 /* Volume-MTL4-Progressive.app */,
+				683D3E112DEFADAA00C71907 /* Window-MTL3-Full.app */,
+				683D3E1F2DEFADAC00C71907 /* Window-MTL3-Mixed.app */,
+				683D3E2D2DEFADAC00C71907 /* Window-MTL3-Progressive.app */,
+				683D3E3B2DEFADAC00C71907 /* Window-MTL4-Full.app */,
+				683D3E492DEFADAC00C71907 /* Window-MTL4-Mixed.app */,
+				683D3E572DEFADAC00C71907 /* Window-MTL4-Progressive.app */,
+				689A0C012DFCD03100844A09 /* macOS-MTL3-Full.app */,
+				689A0C112DFCD04300844A09 /* macOS-MTL3-Progressive.app */,
+				689A0C212DFCD04800844A09 /* macOS-MTL4-Full.app */,
+				689A0C312DFCD05100844A09 /* macOS-MTL4-Progressive.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		683D3DBF2DEFADA800C71907 /* Volume-MTL3-Mixed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D3DC82DEFADA800C71907 /* Build configuration list for PBXNativeTarget "Volume-MTL3-Mixed" */;
+			buildPhases = (
+				683D3DC02DEFADA800C71907 /* Sources */,
+				683D3DC42DEFADA800C71907 /* Frameworks */,
+				683D3DC52DEFADA800C71907 /* Resources */,
+				683D52242DEFDA5900C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Volume-MTL3-Mixed";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 683D3DCB2DEFADA800C71907 /* Volume-MTL3-Mixed.app */;
+			productType = "com.apple.product-type.application";
+		};
+		683D3DCD2DEFADA900C71907 /* Volume-MTL3-Progressive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D3DD62DEFADA900C71907 /* Build configuration list for PBXNativeTarget "Volume-MTL3-Progressive" */;
+			buildPhases = (
+				683D3DCE2DEFADA900C71907 /* Sources */,
+				683D3DD22DEFADA900C71907 /* Frameworks */,
+				683D3DD32DEFADA900C71907 /* Resources */,
+				683D52252DEFDA5B00C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Volume-MTL3-Progressive";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 683D3DD92DEFADA900C71907 /* Volume-MTL3-Progressive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		683D3DDB2DEFADA900C71907 /* Volume-MTL4-Full */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D3DE42DEFADA900C71907 /* Build configuration list for PBXNativeTarget "Volume-MTL4-Full" */;
+			buildPhases = (
+				683D3DDC2DEFADA900C71907 /* Sources */,
+				683D3DE02DEFADA900C71907 /* Frameworks */,
+				683D3DE12DEFADA900C71907 /* Resources */,
+				683D52262DEFDA5D00C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Volume-MTL4-Full";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 683D3DE72DEFADA900C71907 /* Volume-MTL4-Full.app */;
+			productType = "com.apple.product-type.application";
+		};
+		683D3DE92DEFADA900C71907 /* Volume-MTL4-Mixed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D3DF22DEFADA900C71907 /* Build configuration list for PBXNativeTarget "Volume-MTL4-Mixed" */;
+			buildPhases = (
+				683D3DEA2DEFADA900C71907 /* Sources */,
+				683D3DEE2DEFADA900C71907 /* Frameworks */,
+				683D3DEF2DEFADA900C71907 /* Resources */,
+				683D52272DEFDA6000C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Volume-MTL4-Mixed";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 683D3DF52DEFADA900C71907 /* Volume-MTL4-Mixed.app */;
+			productType = "com.apple.product-type.application";
+		};
+		683D3DF72DEFADA900C71907 /* Volume-MTL4-Progressive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D3E002DEFADA900C71907 /* Build configuration list for PBXNativeTarget "Volume-MTL4-Progressive" */;
+			buildPhases = (
+				683D3DF82DEFADA900C71907 /* Sources */,
+				683D3DFC2DEFADA900C71907 /* Frameworks */,
+				683D3DFD2DEFADA900C71907 /* Resources */,
+				683D52282DEFDA6200C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Volume-MTL4-Progressive";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 683D3E032DEFADA900C71907 /* Volume-MTL4-Progressive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		683D3E052DEFADAA00C71907 /* Window-MTL3-Full */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D3E0E2DEFADAA00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL3-Full" */;
+			buildPhases = (
+				683D3E062DEFADAA00C71907 /* Sources */,
+				683D3E0A2DEFADAA00C71907 /* Frameworks */,
+				683D3E0B2DEFADAA00C71907 /* Resources */,
+				683D52292DEFDA6400C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Window-MTL3-Full";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 683D3E112DEFADAA00C71907 /* Window-MTL3-Full.app */;
+			productType = "com.apple.product-type.application";
+		};
+		683D3E132DEFADAC00C71907 /* Window-MTL3-Mixed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D3E1C2DEFADAC00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL3-Mixed" */;
+			buildPhases = (
+				683D3E142DEFADAC00C71907 /* Sources */,
+				683D3E182DEFADAC00C71907 /* Frameworks */,
+				683D3E192DEFADAC00C71907 /* Resources */,
+				683D522A2DEFDA6600C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Window-MTL3-Mixed";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 683D3E1F2DEFADAC00C71907 /* Window-MTL3-Mixed.app */;
+			productType = "com.apple.product-type.application";
+		};
+		683D3E212DEFADAC00C71907 /* Window-MTL3-Progressive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D3E2A2DEFADAC00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL3-Progressive" */;
+			buildPhases = (
+				683D3E222DEFADAC00C71907 /* Sources */,
+				683D3E262DEFADAC00C71907 /* Frameworks */,
+				683D3E272DEFADAC00C71907 /* Resources */,
+				683D522B2DEFDA6900C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Window-MTL3-Progressive";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 683D3E2D2DEFADAC00C71907 /* Window-MTL3-Progressive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		683D3E2F2DEFADAC00C71907 /* Window-MTL4-Full */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D3E382DEFADAC00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL4-Full" */;
+			buildPhases = (
+				683D3E302DEFADAC00C71907 /* Sources */,
+				683D3E342DEFADAC00C71907 /* Frameworks */,
+				683D3E352DEFADAC00C71907 /* Resources */,
+				683D522C2DEFDA6B00C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Window-MTL4-Full";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 683D3E3B2DEFADAC00C71907 /* Window-MTL4-Full.app */;
+			productType = "com.apple.product-type.application";
+		};
+		683D3E3D2DEFADAC00C71907 /* Window-MTL4-Mixed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D3E462DEFADAC00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL4-Mixed" */;
+			buildPhases = (
+				683D3E3E2DEFADAC00C71907 /* Sources */,
+				683D3E422DEFADAC00C71907 /* Frameworks */,
+				683D3E432DEFADAC00C71907 /* Resources */,
+				683D522D2DEFDA6E00C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Window-MTL4-Mixed";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 683D3E492DEFADAC00C71907 /* Window-MTL4-Mixed.app */;
+			productType = "com.apple.product-type.application";
+		};
+		683D3E4B2DEFADAC00C71907 /* Window-MTL4-Progressive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 683D3E542DEFADAC00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL4-Progressive" */;
+			buildPhases = (
+				683D3E4C2DEFADAC00C71907 /* Sources */,
+				683D3E502DEFADAC00C71907 /* Frameworks */,
+				683D3E512DEFADAC00C71907 /* Resources */,
+				683D522E2DEFDA7000C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Window-MTL4-Progressive";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 683D3E572DEFADAC00C71907 /* Window-MTL4-Progressive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6840BDDE2DEFA29A00AE2B5D /* Volume-MTL3-Full */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6840BDF72DEFA29C00AE2B5D /* Build configuration list for PBXNativeTarget "Volume-MTL3-Full" */;
+			buildPhases = (
+				6840BDDB2DEFA29A00AE2B5D /* Sources */,
+				6840BDDC2DEFA29A00AE2B5D /* Frameworks */,
+				6840BDDD2DEFA29A00AE2B5D /* Resources */,
+				683D52132DEFB69F00C71907 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "Volume-MTL3-Full";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 6840BDDF2DEFA29A00AE2B5D /* Volume-MTL3-Full.app */;
+			productType = "com.apple.product-type.application";
+		};
+		689A0BF42DFCD03100844A09 /* macOS-MTL3-Full */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 689A0BFE2DFCD03100844A09 /* Build configuration list for PBXNativeTarget "macOS-MTL3-Full" */;
+			buildPhases = (
+				689A0BF52DFCD03100844A09 /* Sources */,
+				689A0BF92DFCD03100844A09 /* Frameworks */,
+				689A0BFA2DFCD03100844A09 /* Resources */,
+				689A0BFD2DFCD03100844A09 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "macOS-MTL3-Full";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 689A0C012DFCD03100844A09 /* macOS-MTL3-Full.app */;
+			productType = "com.apple.product-type.application";
+		};
+		689A0C042DFCD04300844A09 /* macOS-MTL3-Progressive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 689A0C0E2DFCD04300844A09 /* Build configuration list for PBXNativeTarget "macOS-MTL3-Progressive" */;
+			buildPhases = (
+				689A0C052DFCD04300844A09 /* Sources */,
+				689A0C092DFCD04300844A09 /* Frameworks */,
+				689A0C0A2DFCD04300844A09 /* Resources */,
+				689A0C0D2DFCD04300844A09 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "macOS-MTL3-Progressive";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 689A0C112DFCD04300844A09 /* macOS-MTL3-Progressive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		689A0C142DFCD04800844A09 /* macOS-MTL4-Full */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 689A0C1E2DFCD04800844A09 /* Build configuration list for PBXNativeTarget "macOS-MTL4-Full" */;
+			buildPhases = (
+				689A0C152DFCD04800844A09 /* Sources */,
+				689A0C192DFCD04800844A09 /* Frameworks */,
+				689A0C1A2DFCD04800844A09 /* Resources */,
+				689A0C1D2DFCD04800844A09 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "macOS-MTL4-Full";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 689A0C212DFCD04800844A09 /* macOS-MTL4-Full.app */;
+			productType = "com.apple.product-type.application";
+		};
+		689A0C242DFCD05100844A09 /* macOS-MTL4-Progressive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 689A0C2E2DFCD05100844A09 /* Build configuration list for PBXNativeTarget "macOS-MTL4-Progressive" */;
+			buildPhases = (
+				689A0C252DFCD05100844A09 /* Sources */,
+				689A0C292DFCD05100844A09 /* Frameworks */,
+				689A0C2A2DFCD05100844A09 /* Resources */,
+				689A0C2D2DFCD05100844A09 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6840BDE12DEFA29A00AE2B5D /* CompositorServices_XcodeTemplates */,
+			);
+			name = "macOS-MTL4-Progressive";
+			packageProductDependencies = (
+			);
+			productName = CompositorServices_XcodeTemplates;
+			productReference = 689A0C312DFCD05100844A09 /* macOS-MTL4-Progressive.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6840BDD72DEFA29A00AE2B5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1700;
+				LastUpgradeCheck = 1700;
+				TargetAttributes = {
+					683D3DBB2DEFAD9F00C71907 = {
+						CreatedOnToolsVersion = 17.0;
+					};
+					6840BDDE2DEFA29A00AE2B5D = {
+						CreatedOnToolsVersion = 17.0;
+					};
+				};
+			};
+			buildConfigurationList = 6840BDDA2DEFA29A00AE2B5D /* Build configuration list for PBXProject "CompositorServices_XcodeTemplates" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6840BDD62DEFA29A00AE2B5D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6840BDE02DEFA29A00AE2B5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				683D3DBB2DEFAD9F00C71907 /* Everything */,
+				6840BDDE2DEFA29A00AE2B5D /* Volume-MTL3-Full */,
+				683D3DBF2DEFADA800C71907 /* Volume-MTL3-Mixed */,
+				683D3DCD2DEFADA900C71907 /* Volume-MTL3-Progressive */,
+				683D3DDB2DEFADA900C71907 /* Volume-MTL4-Full */,
+				683D3DE92DEFADA900C71907 /* Volume-MTL4-Mixed */,
+				683D3DF72DEFADA900C71907 /* Volume-MTL4-Progressive */,
+				683D3E052DEFADAA00C71907 /* Window-MTL3-Full */,
+				683D3E132DEFADAC00C71907 /* Window-MTL3-Mixed */,
+				683D3E212DEFADAC00C71907 /* Window-MTL3-Progressive */,
+				683D3E2F2DEFADAC00C71907 /* Window-MTL4-Full */,
+				683D3E3D2DEFADAC00C71907 /* Window-MTL4-Mixed */,
+				683D3E4B2DEFADAC00C71907 /* Window-MTL4-Progressive */,
+				689A0BF42DFCD03100844A09 /* macOS-MTL3-Full */,
+				689A0C042DFCD04300844A09 /* macOS-MTL3-Progressive */,
+				689A0C142DFCD04800844A09 /* macOS-MTL4-Full */,
+				689A0C242DFCD05100844A09 /* macOS-MTL4-Progressive */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		683D3DC52DEFADA800C71907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3DC62DEFADA800C71907 /* Assets.xcassets in Resources */,
+				683D3DC72DEFADA800C71907 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DD32DEFADA900C71907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3DD42DEFADA900C71907 /* Assets.xcassets in Resources */,
+				683D3DD52DEFADA900C71907 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DE12DEFADA900C71907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3DE22DEFADA900C71907 /* Assets.xcassets in Resources */,
+				683D3DE32DEFADA900C71907 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DEF2DEFADA900C71907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3DF02DEFADA900C71907 /* Assets.xcassets in Resources */,
+				683D3DF12DEFADA900C71907 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DFD2DEFADA900C71907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3DFE2DEFADA900C71907 /* Assets.xcassets in Resources */,
+				683D3DFF2DEFADA900C71907 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E0B2DEFADAA00C71907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E0C2DEFADAA00C71907 /* Assets.xcassets in Resources */,
+				683D3E0D2DEFADAA00C71907 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E192DEFADAC00C71907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E1A2DEFADAC00C71907 /* Assets.xcassets in Resources */,
+				683D3E1B2DEFADAC00C71907 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E272DEFADAC00C71907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E282DEFADAC00C71907 /* Assets.xcassets in Resources */,
+				683D3E292DEFADAC00C71907 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E352DEFADAC00C71907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E362DEFADAC00C71907 /* Assets.xcassets in Resources */,
+				683D3E372DEFADAC00C71907 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E432DEFADAC00C71907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E442DEFADAC00C71907 /* Assets.xcassets in Resources */,
+				683D3E452DEFADAC00C71907 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E512DEFADAC00C71907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E522DEFADAC00C71907 /* Assets.xcassets in Resources */,
+				683D3E532DEFADAC00C71907 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6840BDDD2DEFA29A00AE2B5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				682E00432DEFA4C3003F1F36 /* Assets.xcassets in Resources */,
+				6840BE012DEFA31B00AE2B5D /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0BFA2DFCD03100844A09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				689A0BFB2DFCD03100844A09 /* Assets.xcassets in Resources */,
+				689A0BFC2DFCD03100844A09 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0C0A2DFCD04300844A09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				689A0C0B2DFCD04300844A09 /* Assets.xcassets in Resources */,
+				689A0C0C2DFCD04300844A09 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0C1A2DFCD04800844A09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				689A0C1B2DFCD04800844A09 /* Assets.xcassets in Resources */,
+				689A0C1C2DFCD04800844A09 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0C2A2DFCD05100844A09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				689A0C2B2DFCD05100844A09 /* Assets.xcassets in Resources */,
+				689A0C2C2DFCD05100844A09 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		683D52132DEFB69F00C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		683D52242DEFDA5900C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		683D52252DEFDA5B00C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		683D52262DEFDA5D00C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		683D52272DEFDA6000C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		683D52282DEFDA6200C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		683D52292DEFDA6400C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		683D522A2DEFDA6600C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		683D522B2DEFDA6900C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		683D522C2DEFDA6B00C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\"\n";
+		};
+		683D522D2DEFDA6E00C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		683D522E2DEFDA7000C71907 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		689A0BFD2DFCD03100844A09 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		689A0C0D2DFCD04300844A09 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		689A0C1D2DFCD04800844A09 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+		689A0C2D2DFCD05100844A09 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/App.swift",
+				"$(PROJECT_DIR)/CompositorServices_XcodeTemplates/Renderer.swift",
+				"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift \"${PROJECT_DIR}/CompositorServices_XcodeTemplates/SupportingFiles/GenerateTemplate.swift\" \"${PROJECT_DIR}\" \"${SWIFT_ACTIVE_COMPILATION_CONDITIONS}\" \n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		683D3DC02DEFADA800C71907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3DC12DEFADA800C71907 /* Shaders.metal in Sources */,
+				683D3DC22DEFADA800C71907 /* AppModel.swift in Sources */,
+				683D3DC32DEFADA800C71907 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DCE2DEFADA900C71907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3DCF2DEFADA900C71907 /* Shaders.metal in Sources */,
+				683D3DD02DEFADA900C71907 /* AppModel.swift in Sources */,
+				683D3DD12DEFADA900C71907 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DDC2DEFADA900C71907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3DDD2DEFADA900C71907 /* Shaders.metal in Sources */,
+				683D3DDE2DEFADA900C71907 /* AppModel.swift in Sources */,
+				683D3DDF2DEFADA900C71907 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DEA2DEFADA900C71907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3DEB2DEFADA900C71907 /* Shaders.metal in Sources */,
+				683D3DEC2DEFADA900C71907 /* AppModel.swift in Sources */,
+				683D3DED2DEFADA900C71907 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3DF82DEFADA900C71907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3DF92DEFADA900C71907 /* Shaders.metal in Sources */,
+				683D3DFA2DEFADA900C71907 /* AppModel.swift in Sources */,
+				683D3DFB2DEFADA900C71907 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E062DEFADAA00C71907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E072DEFADAA00C71907 /* Shaders.metal in Sources */,
+				683D3E082DEFADAA00C71907 /* AppModel.swift in Sources */,
+				683D3E092DEFADAA00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E142DEFADAC00C71907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E152DEFADAC00C71907 /* Shaders.metal in Sources */,
+				683D3E162DEFADAC00C71907 /* AppModel.swift in Sources */,
+				683D3E172DEFADAC00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E222DEFADAC00C71907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E232DEFADAC00C71907 /* Shaders.metal in Sources */,
+				683D3E242DEFADAC00C71907 /* AppModel.swift in Sources */,
+				683D3E252DEFADAC00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E302DEFADAC00C71907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E312DEFADAC00C71907 /* Shaders.metal in Sources */,
+				683D3E322DEFADAC00C71907 /* AppModel.swift in Sources */,
+				683D3E332DEFADAC00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E3E2DEFADAC00C71907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E3F2DEFADAC00C71907 /* Shaders.metal in Sources */,
+				683D3E402DEFADAC00C71907 /* AppModel.swift in Sources */,
+				683D3E412DEFADAC00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683D3E4C2DEFADAC00C71907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				683D3E4D2DEFADAC00C71907 /* Shaders.metal in Sources */,
+				683D3E4E2DEFADAC00C71907 /* AppModel.swift in Sources */,
+				683D3E4F2DEFADAC00C71907 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6840BDDB2DEFA29A00AE2B5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				682E00422DEFA4C3003F1F36 /* Shaders.metal in Sources */,
+				682E003D2DEFA49E003F1F36 /* AppModel.swift in Sources */,
+				682E003E2DEFA49E003F1F36 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0BF52DFCD03100844A09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				689A0BF62DFCD03100844A09 /* Shaders.metal in Sources */,
+				689A0BF72DFCD03100844A09 /* AppModel.swift in Sources */,
+				689A0BF82DFCD03100844A09 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0C052DFCD04300844A09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				689A0C062DFCD04300844A09 /* Shaders.metal in Sources */,
+				689A0C072DFCD04300844A09 /* AppModel.swift in Sources */,
+				689A0C082DFCD04300844A09 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0C152DFCD04800844A09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				689A0C162DFCD04800844A09 /* Shaders.metal in Sources */,
+				689A0C172DFCD04800844A09 /* AppModel.swift in Sources */,
+				689A0C182DFCD04800844A09 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		689A0C252DFCD05100844A09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				689A0C262DFCD05100844A09 /* Shaders.metal in Sources */,
+				689A0C272DFCD05100844A09 /* AppModel.swift in Sources */,
+				689A0C282DFCD05100844A09 /* ToggleImmersiveSpaceButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		683D3DBC2DEFAD9F00C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		683D3DBD2DEFAD9F00C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		683D3DC92DEFADA800C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00482DEFA542003F1F36 /* Volume-MTL3-Mixed.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		683D3DCA2DEFADA800C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00482DEFA542003F1F36 /* Volume-MTL3-Mixed.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		683D3DD72DEFADA900C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E004A2DEFA5CC003F1F36 /* Volume-MTL3-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		683D3DD82DEFADA900C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E004A2DEFA5CC003F1F36 /* Volume-MTL3-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		683D3DE52DEFADA900C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E004F2DEFA5EA003F1F36 /* Volume-MTL4-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		683D3DE62DEFADA900C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E004F2DEFA5EA003F1F36 /* Volume-MTL4-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		683D3DF32DEFADA900C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E004E2DEFA5EA003F1F36 /* Volume-MTL4-Mixed.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		683D3DF42DEFADA900C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E004E2DEFA5EA003F1F36 /* Volume-MTL4-Mixed.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		683D3E012DEFADA900C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00502DEFA5EA003F1F36 /* Volume-MTL4-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		683D3E022DEFADA900C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00502DEFA5EA003F1F36 /* Volume-MTL4-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		683D3E0F2DEFADAA00C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00522DEFA5FD003F1F36 /* Window-MTL3-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		683D3E102DEFADAA00C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00522DEFA5FD003F1F36 /* Window-MTL3-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		683D3E1D2DEFADAC00C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00512DEFA5FD003F1F36 /* Window-MTL3-Mixed.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		683D3E1E2DEFADAC00C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00512DEFA5FD003F1F36 /* Window-MTL3-Mixed.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		683D3E2B2DEFADAC00C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00532DEFA5FD003F1F36 /* Window-MTL3-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		683D3E2C2DEFADAC00C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00532DEFA5FD003F1F36 /* Window-MTL3-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		683D3E392DEFADAC00C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00552DEFA5FD003F1F36 /* Window-MTL4-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		683D3E3A2DEFADAC00C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00552DEFA5FD003F1F36 /* Window-MTL4-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		683D3E472DEFADAC00C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00542DEFA5FD003F1F36 /* Window-MTL4-Mixed.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		683D3E482DEFADAC00C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00542DEFA5FD003F1F36 /* Window-MTL4-Mixed.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		683D3E552DEFADAC00C71907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00562DEFA5FD003F1F36 /* Window-MTL4-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		683D3E562DEFADAC00C71907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00562DEFA5FD003F1F36 /* Window-MTL4-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		6840BDF82DEFA29C00AE2B5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00492DEFA5CC003F1F36 /* Volume-MTL3-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		6840BDF92DEFA29C00AE2B5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 682E00492DEFA5CC003F1F36 /* Volume-MTL3-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = xros.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		6840BDFA2DEFA29C00AE2B5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683D3E592DEFAE8C00C71907 /* BaseConfig.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		6840BDFB2DEFA29C00AE2B5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683D3E592DEFAE8C00C71907 /* BaseConfig.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		689A0BFF2DFCD03100844A09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689A0C342DFCD05C00844A09 /* macOS-MTL3-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = macosx.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		689A0C002DFCD03100844A09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689A0C342DFCD05C00844A09 /* macOS-MTL3-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = macosx.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		689A0C0F2DFCD04300844A09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689A0C352DFCD05D00844A09 /* macOS-MTL3-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = macosx.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		689A0C102DFCD04300844A09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689A0C352DFCD05D00844A09 /* macOS-MTL3-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = macosx.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		689A0C1F2DFCD04800844A09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689A0C372DFCD0A700844A09 /* macOS-MTL4-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = macosx.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		689A0C202DFCD04800844A09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689A0C372DFCD0A700844A09 /* macOS-MTL4-Full.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = macosx.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		689A0C2F2DFCD05100844A09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689A0C362DFCD05E00844A09 /* macOS-MTL4-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = macosx.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		689A0C302DFCD05100844A09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689A0C362DFCD05E00844A09 /* macOS-MTL4-Progressive.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.CompositorServices-XcodeTemplates";
+				SDKROOT = macosx.internal;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		683D3DBE2DEFAD9F00C71907 /* Build configuration list for PBXAggregateTarget "Everything" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3DBC2DEFAD9F00C71907 /* Debug */,
+				683D3DBD2DEFAD9F00C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D3DC82DEFADA800C71907 /* Build configuration list for PBXNativeTarget "Volume-MTL3-Mixed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3DC92DEFADA800C71907 /* Debug */,
+				683D3DCA2DEFADA800C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D3DD62DEFADA900C71907 /* Build configuration list for PBXNativeTarget "Volume-MTL3-Progressive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3DD72DEFADA900C71907 /* Debug */,
+				683D3DD82DEFADA900C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D3DE42DEFADA900C71907 /* Build configuration list for PBXNativeTarget "Volume-MTL4-Full" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3DE52DEFADA900C71907 /* Debug */,
+				683D3DE62DEFADA900C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D3DF22DEFADA900C71907 /* Build configuration list for PBXNativeTarget "Volume-MTL4-Mixed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3DF32DEFADA900C71907 /* Debug */,
+				683D3DF42DEFADA900C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D3E002DEFADA900C71907 /* Build configuration list for PBXNativeTarget "Volume-MTL4-Progressive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3E012DEFADA900C71907 /* Debug */,
+				683D3E022DEFADA900C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D3E0E2DEFADAA00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL3-Full" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3E0F2DEFADAA00C71907 /* Debug */,
+				683D3E102DEFADAA00C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D3E1C2DEFADAC00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL3-Mixed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3E1D2DEFADAC00C71907 /* Debug */,
+				683D3E1E2DEFADAC00C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D3E2A2DEFADAC00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL3-Progressive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3E2B2DEFADAC00C71907 /* Debug */,
+				683D3E2C2DEFADAC00C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D3E382DEFADAC00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL4-Full" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3E392DEFADAC00C71907 /* Debug */,
+				683D3E3A2DEFADAC00C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D3E462DEFADAC00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL4-Mixed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3E472DEFADAC00C71907 /* Debug */,
+				683D3E482DEFADAC00C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		683D3E542DEFADAC00C71907 /* Build configuration list for PBXNativeTarget "Window-MTL4-Progressive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				683D3E552DEFADAC00C71907 /* Debug */,
+				683D3E562DEFADAC00C71907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6840BDDA2DEFA29A00AE2B5D /* Build configuration list for PBXProject "CompositorServices_XcodeTemplates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6840BDFA2DEFA29C00AE2B5D /* Debug */,
+				6840BDFB2DEFA29C00AE2B5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6840BDF72DEFA29C00AE2B5D /* Build configuration list for PBXNativeTarget "Volume-MTL3-Full" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6840BDF82DEFA29C00AE2B5D /* Debug */,
+				6840BDF92DEFA29C00AE2B5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		689A0BFE2DFCD03100844A09 /* Build configuration list for PBXNativeTarget "macOS-MTL3-Full" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				689A0BFF2DFCD03100844A09 /* Debug */,
+				689A0C002DFCD03100844A09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		689A0C0E2DFCD04300844A09 /* Build configuration list for PBXNativeTarget "macOS-MTL3-Progressive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				689A0C0F2DFCD04300844A09 /* Debug */,
+				689A0C102DFCD04300844A09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		689A0C1E2DFCD04800844A09 /* Build configuration list for PBXNativeTarget "macOS-MTL4-Full" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				689A0C1F2DFCD04800844A09 /* Debug */,
+				689A0C202DFCD04800844A09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		689A0C2E2DFCD05100844A09 /* Build configuration list for PBXNativeTarget "macOS-MTL4-Progressive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				689A0C2F2DFCD05100844A09 /* Debug */,
+				689A0C302DFCD05100844A09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6840BDD72DEFA29A00AE2B5D /* Project object */;
+}

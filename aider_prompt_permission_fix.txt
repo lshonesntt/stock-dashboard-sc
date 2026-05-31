@@ -1,0 +1,147 @@
+# SelePic - 사진 권한 문제 개선 요청
+
+## 현재 문제점
+1. "사진 라이브러리 접근 권한이 필요합니다" 화면에서 "권한 허용하기" 버튼을 누르면 아무 반응이 없음
+2. iOS 14+에서는 이미 거부한 권한을 재요청하면 시스템 권한 다이얼로그 대신 설정 화면으로 이동하는 알림만 표시됨. 앱 UI는 업데이트되지 않음
+3. 디버깅 로깅이 전혀 없어什么问题인지 파악 불가
+4. 권한이 거부된 경우 설정 화면으로 직접 이동할 수 있는 UI가 없음
+
+## 수정 대상 파일
+- `/Users/scott/aider_Project/SelePic/SelePic/ContentView.swift`
+
+## 요구사항
+
+### 1. 권한 상태 확인 함수 개선 (checkPermission)
+- 권한 상태 확인 시 logs 추가 (`print("Permission status: \(status)")`)
+- 3가지 상태 모두 처리: `.authorized`, `.limited`, `.denied`, `.restricted`, `.notDetermined`
+- `.notDetermined` 상태일 때는 자동으로 권한을 요청하도록 개선
+
+```swift
+func checkPermission() {
+    let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+    print("📸 Permission status: \(status.rawValue)") // 디버깅용
+    
+    DispatchQueue.main.async {
+        switch status {
+        case .authorized, .limited:
+            print("✅ 권한 허용됨")
+            permissionGranted = true
+        case .denied, .restricted:
+            print("❌ 권한 거부됨 - 설정으로 이동 필요")
+            permissionGranted = false
+        case .notDetermined:
+            print("⏳ 아직 권한 결정 안됨 - 자동으로 요청")
+            requestPermission()
+        @unknown default:
+            print("❓ 알 수 없는 권한 상태: \(status.rawValue)")
+            permissionGranted = false
+        }
+    }
+}
+```
+
+### 2. 권한 요청 버튼 UI 개선 (가장 중요!)
+권한이 거부된 경우 "권한 허용하기" 버튼 대신 다음과 같은 UI를 표시해야 함:
+
+```swift
+// permissionGranted가 false일 때:
+else if PHPhotoLibrary.authorizationStatus(for: .readWrite) == .notDetermined {
+    // 최초 권한 요청 화면
+    VStack(spacing: 20) {
+        Image(systemName: "photo.on.rectangle")
+              .font(.system(size: 60))
+              .foregroundColor(.gray)
+        Text("사진 라이브러리 접근 권한이 필요합니다.")
+              .foregroundColor(.white)
+        Button("권한 요청하기") {
+            requestPermission()
+          }
+          .buttonStyle(.borderedProminent)
+    }
+} else {
+    // 이미 거부된 경우 설정 이동 화면
+    VStack(spacing: 20) {
+        Image(systemName: "exclamationmark.triangle")
+              .font(.system(size: 60))
+              .foregroundColor(.orange)
+        Text("사진 라이브러리 접근 권한이 거부되었습니다.\n설정에서 권한을 허용해 주세요.")
+              .foregroundColor(.white)
+              .multilineTextAlignment(.center)
+        Button("설정으로 이동하기") {
+            openSettings()
+          }
+          .buttonStyle(.borderedProminent)
+          .tint(.orange)
+    }
+}
+```
+
+### 3. 설정 직접 이동 함수 추가
+```swift
+func openSettings() {
+    if let url = URL(string: UIApplication.openSettingsURLString) {
+        DispatchQueue.main.async {
+            UIApplication.shared.open(url)
+            print("🔧 설정 화면으로 이동함: \(url)")
+        }
+    }
+}
+```
+
+### 4. 권한 요청 함수 개선
+```swift
+func requestPermission() {
+    print("📸 권한 요청 시작...")
+    PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
+        print("📸 권한 응답 받음: \(status.rawValue)")
+        DispatchQueue.main.async {
+            checkPermission()
+        }
+    }
+}
+```
+
+### 5. onAppear 개선
+`.task` modifier나 `.onAppear`에서 `.notDetermined`일 때만 자동 요청하도록 하되, 이미 `.denied` 상태라면 설정 이동 UI를 즉시 표시
+
+## 전체 ContentView.swift의 body 업데이트 방향
+```swift
+var body: some View {
+    ZStack {
+        Color.black.ignoresSafeArea()
+        
+        Group {
+            if PHPhotoLibrary.authorizationStatus(for: .readWrite) == .notDetermined && !permissionGranted {
+                // 1. 최초 권한 요청 화면
+                firstPermissionRequestView
+            } else if !permissionGranted {
+                // 2. 권한 거부됨 - 설정 이동 화면
+                deniedPermissionView
+            } else if photos.isEmpty {
+                // 3. 권한 있음 - 사진 없음
+                emptyPhotosView
+            } else {
+                // 4. 사진 있음 - 메인 화면 (기존과 동일)
+                mainContent
+            }
+        }
+        // ... 나머지 기존 코드 유지
+    }
+    .onAppear {
+        checkPermission()
+        loadSavedData()
+    }
+}
+```
+
+### 6. 전체적인 검증
+모든 코드를 수정한 후 다음 명령어로 빌드를 테스트해줘:
+```bash
+cd /Users/scott/aider_Project && xcrun xcodebuild -project SelePic/SelePic.xcodeproj -target SelePic -configuration Debug build 2>&1
+```
+
+## 중요한 점
+- 기존 기능은 모두 유지
+- 권한 관련 코드만 수정 (exportAlbum, swipe 기능, 앨범 관리 UI는 변경하지 않음)
+- print 디버깅 로깅은 유지 (추후 제거 가능)
+- SwiftUI view modifiers는 기존 스타일과 유사하게 유지

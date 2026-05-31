@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "youtube-downloader"
+version = "1.0.0"
+description = "YouTube Downloader - PyQt5 GUI app for macOS"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "User"}]
+dependencies = [
+    "PyQt5>=5.15.0",
+    "yt-dlp>=2024.0.0",
+]
+
+[project.scripts]
+youtube-downloader = "youtube_downloader.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["youtube_downloader*"]
