@@ -28,6 +28,13 @@
     "date": "2026-04-01",
     "source": "FRED/UNRATE"
   },
+  "usfedrate": {
+    "value": 3.64,
+    "change": 0,
+    "changePct": 0,
+    "date": "2026-04-01",
+    "source": "FRED/FEDFUNDS"
+  },
   "krkospi": {
     "value": 8476.15,
     "change": 290.86,
