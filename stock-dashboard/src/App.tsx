@@ -1,15 +1,5 @@
 import { useState, useEffect } from 'react'
 
-const COLORS = {
-  up: '#3b82f6',
-  down: '#ef4444',
-  neutral: '#eab308',
-  bg: '#121214',
-  card: '#1e1e24',
-  text: '#e5e7e3',
-  textSecondary: '#8b949a',
-  border: 'rgba(255,255,255,0.08)',
-}
 
 type Indicator = {
   id: string
@@ -115,88 +105,28 @@ function getChangeText(_yahoo: ApiIndicator | null, changePct: number): string {
 }
 
 function IndicatorCard({ ind, yahoo }: { ind: Indicator; yahoo: ApiIndicator | null }) {
-  const color = COLORS[ind.signal || 'neutral']
   const flag = ind.country === 'KR' ? '🇰🇷' : '🇺🇸'
   const changePct = yahoo ? yahoo.changePct : 0
   const formattedValue = getDisplayValue(ind, yahoo)
   const changeText = getChangeText(yahoo, changePct)
 
   return (
-    <div style={{
-      backgroundColor: COLORS.card,
-      borderRadius: 16,
-      padding: '24px 20px',
-      border: `1px solid ${COLORS.border}`,
-      boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
-      transition: 'transform 0.2s, box-shadow 0.2s',
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = 'translateY(-2px)'
-      e.currentTarget.style.boxShadow = '0 6px 24px rgba(0,0,0,0.6)'
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = 'translateY(0)'
-      e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.4)'
-    }}>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 16,
-        paddingBottom: 12,
-        borderBottom: `1px solid ${COLORS.border}`,
-      }}>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 12,
-        }}>
-          <div style={{
-            width: 14,
-            height: 14,
-            borderRadius: '50%',
-            backgroundColor: color,
-            boxShadow: `${color}5e 0px 0px 12px`,
-          }} />
-          <span style={{ fontSize: 24 }}>{flag}</span>
-          <span style={{
-            fontSize: 14,
-            color: COLORS.textSecondary,
-          }}>{ind.name}</span>
+     <div className={`indicator-card ${ind.signal}`}>
+      <div className="card-header">
+        <div className="card-title">
+          <div className="signal-dot" />
+          <span className="flag">{flag}</span>
+          <span className="card-name">{ind.name}</span>
         </div>
-        <span style={{
-          fontSize: 16,
-          fontWeight: 600,
-          color: changePct > 0.001 ? COLORS.up : COLORS.down,
-        }}>{changeText}</span>
+        <span className="change-text">{changeText}</span>
       </div>
 
-      <div style={{
-        fontSize: 36,
-        fontWeight: 800,
-        marginBottom: 12,
-        fontFamily: 'monospace',
-        color: COLORS.text,
-      }}>{formattedValue}</div>
+      <div className="card-value">{formattedValue}</div>
 
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-start',
-      }}>
-        <span style={{
-          fontSize: 13,
-          fontWeight: 500,
-          color: changePct > 0.001 ? COLORS.up : COLORS.down,
-        }}>포인트: {yahoo ? (yahoo.change > 0 ? '+' : '') + yahoo.change.toFixed(2) : changePct.toFixed(2)}</span>
+      <div className="card-footer">
+        <span className="point-text">포인트: {yahoo ? (yahoo.change > 0 ? '+' : '') + yahoo.change.toFixed(2) : changePct.toFixed(2)}</span>
 
-        <p style={{
-          fontSize: 12,
-          color: COLORS.textSecondary,
-          maxWidth: '50%',
-          margin: 0,
-          lineHeight: 1.4,
-        }}>{ind.description}</p>
+        <p className="card-desc">{ind.description}</p>
       </div>
     </div>
   )
@@ -208,39 +138,19 @@ function SummaryBar({ up: upCount, neutral: neutralCount, down: downCount }: {
   down: number
 }) {
   return (
-    <div style={{
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: 12,
-      padding: '12px 24px',
-      background: 'rgba(255,255,255,0.05)',
-      border: `1px solid ${COLORS.border}`,
-      borderRadius: 24,
-    }}>
-      <div style={{
-        width: 14,
-        height: 14,
-        borderRadius: '50%',
-        backgroundColor: COLORS.up,
-        boxShadow: `${COLORS.up}5e 0px 0px 12px`,
-      }} />
-      <span style={{ fontSize: 13, fontWeight: 500, color: COLORS.up }}>긍정 {upCount}</span>
-      <div style={{
-        width: 10,
-        height: 10,
-        borderRadius: '50%',
-        backgroundColor: COLORS.neutral,
-        boxShadow: `${COLORS.neutral}5e 0px 0px 8px`,
-      }} />
-      <span style={{ fontSize: 13, fontWeight: 500, color: COLORS.neutral }}>중립 {neutralCount}</span>
-      <div style={{
-        width: 10,
-        height: 10,
-        borderRadius: '50%',
-        backgroundColor: COLORS.down,
-        boxShadow: `${COLORS.down}5e 0px 0px 8px`,
-      }} />
-      <span style={{ fontSize: 13, fontWeight: 500, color: COLORS.down }}>부정 {downCount}</span>
+     <div className="summary-bar">
+      <div className="summary-item up">
+        <div className="summary-dot up" />
+        <span>{upCount}</span>
+      </div>
+      <div className="summary-item neutral">
+        <div className="summary-dot neutral" />
+        <span>{neutralCount}</span>
+      </div>
+      <div className="summary-item down">
+        <div className="summary-dot down" />
+        <span>{downCount}</span>
+      </div>
     </div>
   )
 }
@@ -303,144 +213,79 @@ function App() {
 
   if (loading) {
     return (
-      <div style={{
-        minHeight: '100vh',
-        backgroundColor: COLORS.bg,
-        color: COLORS.text,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-      }}>
-        <div style={{ fontSize: 48, marginBottom: 16, animation: 'spin 1s linear infinite' }}>⏳</div>
-        <h2>🇺🇸🇰🇷 한미 경제 신호등 로딩 중...</h2>
-        <p style={{ color: COLORS.textSecondary }}>실시간 데이터를 가져오는 중입니다</p>
-      </div>
-    )
-  }
+       <div className="loading-screen">
+         <div className="spinner">⏳</div>
+         <h2 className="loading-title">🇺🇸🇰🇷 한미 경제 신호등 로딩 중...</h2>
+         <p className="loading-text">실시간 데이터를 가져오는 중입니다</p>
+       </div>
+     )
+   }
 
   const usData = data.filter(i => i.country === 'US')
-  const krData = data.filter(i => i.country === 'KR')
+   const krData = data.filter(i => i.country === 'KR')
 
-  const calcSummary = (items: Indicator[]) => ({
+   const calcSummary = (items: Indicator[]) => ({
     up: items.filter(i => i.signal === 'up').length,
     neutral: items.filter(i => i.signal === 'neutral').length,
     down: items.filter(i => i.signal === 'down').length,
-  })
+   })
 
-  const usSummary = calcSummary(usData)
-  const krSummary = calcSummary(krData)
+   const usSummary = calcSummary(usData)
+   const krSummary = calcSummary(krData)
 
-  return (
-    <div style={{
-      minHeight: '100vh',
-      backgroundColor: COLORS.bg,
-      color: COLORS.text,
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    }}>
-      <header style={{
-        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
-        padding: '40px 20px',
-        textAlign: 'center',
-        borderBottom: `1px solid ${COLORS.border}`,
-      }}>
-        <h1 style={{ fontSize: 32, margin: 0, fontWeight: 800, letterSpacing: '-0.02em' }}>
-          🇺🇸🇰🇷 한·미 경제 신호등
-        </h1>
-        <p style={{ margin: '8px 0px 24px', color: COLORS.textSecondary, fontSize: 14 }}>
+   return (
+      <div className="app">
+       <header className="header">
+         <h1 className="title">🇺🇸🇰🇷 한·미 경제 신호등</h1>
+         <p className="subtitle">
           Yahoo Finance + 세계은행 기반 실시간 경제 지표 대시보드
-        </p>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: 32,
-          flexWrap: 'wrap',
-        }}>
+         </p>
+         <div className="summary-row">
           <SummaryBar {...usSummary} />
           <SummaryBar {...krSummary} />
-        </div>
-      </header>
+         </div>
+       </header>
 
-      <main style={{
-        maxWidth: 1400,
-        margin: '0 auto',
-        padding: '32px 20px',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: 32,
-      }}>
-        <section>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 12,
-            marginBottom: 24,
-            paddingBottom: 16,
-            borderBottom: `2px solid ${COLORS.up}30`,
-          }}>
-            <span style={{ fontSize: 32 }}>🇺🇸</span>
-            <h2 style={{ fontSize: 24, fontWeight: 700, margin: 0 }}>
-              미국 경제 신호등
-            </h2>
+       <main className="main">
+         <section className="section us-section">
+          <div className="section-header">
+           <span className="section-flag">🇺🇸</span>
+           <h2 className="section-title">美国 경제 신호등</h2>
           </div>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: 20,
-          }}>
-             {usData.map(ind => (
-                <IndicatorCard
-                key={ind.id}
-                ind={ind}
-                yahoo={apiData[ind.id] || null}
-                />
-              ))}
+          <div className="grid">
+           {usData.map(ind => (
+              <IndicatorCard
+               key={ind.id}
+               ind={ind}
+               yahoo={apiData[ind.id] || null}
+               />
+             ))}
           </div>
-        </section>
+         </section>
 
-        <section>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 12,
-            marginBottom: 24,
-            paddingBottom: 16,
-            borderBottom: `2px solid ${COLORS.up}30`,
-          }}>
-            <span style={{ fontSize: 32 }}>🇰🇷</span>
-            <h2 style={{ fontSize: 24, fontWeight: 700, margin: 0 }}>
-              한국 경제 신호등
-            </h2>
+         <section className="section kr-section">
+          <div className="section-header">
+           <span className="section-flag">🇰🇷</span>
+           <h2 className="section-title">한국 경제 신호등</h2>
           </div>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: 20,
-          }}>
-              {krData.map(ind => (
-                 <IndicatorCard
-                key={ind.id}
-                ind={ind}
-                yahoo={apiData[ind.id] || null}
-                 />
-               ))}
+          <div className="grid">
+           {krData.map(ind => (
+              <IndicatorCard
+               key={ind.id}
+               ind={ind}
+               yahoo={apiData[ind.id] || null}
+               />
+             ))}
           </div>
-        </section>
-      </main>
+         </section>
+       </main>
 
-      <footer style={{
-        textAlign: 'center',
-        padding: '32px 20px 24px',
-        borderTop: `1px solid ${COLORS.border}`,
-        color: COLORS.textSecondary,
-        fontSize: 13,
-        lineHeight: 1.6,
-      }}>
+       <footer className="footer">
         <p>데이터 출처: Yahoo Finance (실시간), 세계은행 (거시경제)</p>
         <p>마지막 업데이트: {lastUpdated}</p>
-      </footer>
-    </div>
-  )
+       </footer>
+     </div>
+   )
 }
 
 export default App
