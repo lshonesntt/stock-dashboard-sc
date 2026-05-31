@@ -1,142 +1,72 @@
 {
   "usp500": {
-    "symbol": "^GSPC",
-    "value": 7580.06005859375,
-    "change": 16.43017578125,
-    "changePct": 0.2172260678511746,
-    "signal": "up",
-    "nameKo": "S&P 500",
-    "country": "US",
-    "type": "index"
+    "value": 7580.06,
+    "change": 16.43,
+    "changePct": 0.22
   },
   "usdjwr": {
-    "symbol": "^DJI",
-    "value": 51032.4609375,
-    "change": 363.4921875,
-    "changePct": 0.717386196063049,
-    "signal": "up",
-    "nameKo": "다우 존스",
-    "country": "US",
-    "type": "index"
+    "value": 51032.46,
+    "change": 363.49,
+    "changePct": 0.72
   },
   "usnx": {
-    "symbol": "^IXIC",
-    "value": 26972.619140625,
-    "change": 55.1484375,
-    "changePct": 0.2048797158850349,
-    "signal": "up",
-    "nameKo": "나스닥",
-    "country": "US",
-    "type": "index"
+    "value": 26972.62,
+    "change": 55.15,
+    "changePct": 0.2
   },
-  "uscpi": {
-    "symbol": "USXCPI=X",
-    "value": 315.7,
-    "change": 0.5,
-    "changePct": 0.16,
-    "signal": "neutral",
-    "nameKo": "소비자물가지수",
-    "country": "US",
-    "type": "inflation"
-  },
-  "unemployment": {
-    "symbol": "USUNEMP=X",
-    "value": 4.3,
-    "change": 0.0,
-    "changePct": 0.0,
-    "signal": "up",
-    "nameKo": "실업률",
-    "country": "US",
-    "type": "unemployment"
-  },
-  "usfedrate": {
-    "symbol": "FDCMPCT1565900001001UM",
-    "value": 4.5,
-    "change": 0,
-    "changePct": 0,
-    "signal": "neutral",
-    "nameKo": "미 연방기준금리",
-    "country": "US",
-    "type": "interest_rate"
+  "uscpi_inflation": {
+    "value": 0.64,
+    "change": 0.64,
+    "changePct": 0.64,
+    "date": "2026-04-01",
+    "source": "FRED/CPIAUCSL"
   },
   "krkospi": {
-    "symbol": "^KS11",
-    "value": 8476.150390625,
-    "change": 290.8603515625,
-    "changePct": 3.5534519873386627,
-    "signal": "up",
-    "nameKo": "KOSPI 지수",
-    "country": "KR",
-    "type": "index"
+    "value": 8476.15,
+    "change": 290.86,
+    "changePct": 3.55
   },
   "krkq11": {
-    "symbol": "^KQ11",
-    "value": 1074.800048828125,
-    "change": -29.5599365234375,
-    "changePct": -2.6766576945494247,
-    "signal": "down",
-    "nameKo": "KOSDAQ 지수",
-    "country": "KR",
-    "type": "index"
+    "value": 1074.8,
+    "change": -29.56,
+    "changePct": -2.68
   },
   "krks200": {
-    "symbol": "^KS200",
-    "value": 1342.8199462890625,
+    "value": 1342.82,
     "change": 50.25,
-    "changePct": 3.887603927684266,
-    "signal": "up",
-    "nameKo": "KOSPI 200 지수",
-    "country": "KR",
-    "type": "index"
+    "changePct": 3.89
   },
   "kr_cpi": {
-    "symbol": "USXCPI=X",
     "value": 2.2,
     "change": -0.1,
-    "changePct": -4.35,
-    "signal": "neutral",
-    "nameKo": "물가상승률",
-    "country": "KR",
-    "type": "inflation"
+    "changePct": -0.1,
+    "date": "2026-04",
+    "source": "통계청"
   },
   "kr_unemploy": {
-    "symbol": "KRUNEMP=X",
     "value": 2.8,
-    "change": 0,
-    "changePct": 0,
-    "signal": "up",
-    "nameKo": "실업률",
-    "country": "KR",
-    "type": "unemployment"
+    "change": -0.1,
+    "changePct": -0.1,
+    "date": "2026-04",
+    "source": "통계청"
   },
   "kr_interest": {
-    "symbol": "KRIBOR=X",
     "value": 3.5,
     "change": 0,
     "changePct": 0,
-    "signal": "neutral",
-    "nameKo": "기준금리",
-    "country": "KR",
-    "type": "interest_rate"
-  },
-  "kr_exchange": {
-    "symbol": "USDKRW=X",
-    "value": 1507.1300048828125,
-    "change": 4.02001953125,
-    "changePct": 0.26744679833324086,
-    "signal": "neutral",
-    "nameKo": "원/달러 환율",
-    "country": "KR",
-    "type": "exchange_rate"
+    "date": "2026-04",
+    "source": "한국은행"
   },
   "kr_trade": {
-    "symbol": "USDKRW=X",
     "value": -2800,
-    "change": 0,
+    "change": -300,
     "changePct": 0,
-    "signal": "down",
-    "nameKo": "무역수지",
-    "country": "KR",
-    "type": "trade_balance"
+    "date": "2026-04",
+    "source": "한국은행/관세청"
+  },
+  "kr_exchange": {
+    "value": 1507.13,
+    "change": 4.02,
+    "changePct": 0.27
   }
 }

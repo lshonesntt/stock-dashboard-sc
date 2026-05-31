@@ -1,225 +1,187 @@
 import { useState, useEffect } from 'react'
 
-// CSS Variables로 색상 정의
-const COLORS: Record<string, string> & {
-  up: string
-  down: string
-  neutral: string
-  bg: string
-  card: string
-  text: string
-  textSecondary: string
-  border: string
-} = {
-  up: '#22c55e',        // 초록
-  down: '#ef4444',      // 빨강
-  neutral: '#eab308',    // 노랑
-  bg: '#121214',        // 배경 다크 네이비/블랙
-  card: '#1e1e24',      // 카 짙은 회색
-  text: '#e6edf3',      // 메인 텍스트
-  textSecondary: '#8b949e', // 서브 텍스트
+const COLORS = {
+  up: '#3b82f6',
+  down: '#ef4444',
+  neutral: '#eab308',
+  bg: '#121214',
+  card: '#1e1e24',
+  text: '#e5e7e3',
+  textSecondary: '#8b949a',
   border: 'rgba(255,255,255,0.08)',
 }
 
-interface YahooData {
-  current: number
-  change: number
-  changePct: number
-}
-
-interface Indicator {
+type Indicator = {
   id: string
   name: string
-  nameKo: string
-  description: string
-  country: 'US' | 'KR'
-  yahooSymbol: string
-  unit: string
-  target: 'up' | 'down' | 'neutral'
   value: number
-  signal: string
-  type: string  // index, inflation, unemployment, interest_rate, etc.
+  signal: 'up' | 'down' | 'neutral'
+  country: string
+  type: string
+  yahooSymbol: string | null
+  unit: string
+  description: string
+  date?: string
+  source?: string
 }
 
-// 한국 경제 지표
-const KR_INDICATORS: Indicator[] = [
-  { id: 'krkospi', name: 'KOSPI', nameKo: 'KOSPI 지수', description: '한국 주식시장의 대표적인 종합지수로, 시가총액 상위 200개 종목으로 구성', country: 'KR', yahooSymbol: '^KS11', unit: 'pt', target: 'up', value: 0, signal: 'neutral', type: 'index' },
-  { id: 'krkq11', name: 'KOSDAQ', nameKo: 'KOSDAQ 지수', description: '한국 중소벤처기업 중심의 주식시장 지수, IT/바이오 기업 비중 높음', country: 'KR', yahooSymbol: '^KQ11', unit: 'pt', target: 'up', value: 0, signal: 'neutral', type: 'index' },
-  { id: 'krks200', name: 'KOSPI 200', nameKo: 'KOSPI 200 지수', description: '시가총액 및 유동성 기준 선정된 대형주 200개 종목으로 구성된 선도 지수', country: 'KR', yahooSymbol: '^KS200', unit: 'pt', target: 'up', value: 0, signal: 'neutral', type: 'index' },
-  { id: 'kr_cpi', name: 'Inflation Rate', nameKo: '물가상승률', description: '소비자물가지수 전년동기비. 2% 목표선 유지가 적정 물가안정 수준', country: 'KR', yahooSymbol: 'USXCPI=X', unit: '%', target: 'neutral', value: 2.2, signal: 'neutral', type: 'inflation' },
-  { id: 'kr_unemploy', name: 'Unemployment', nameKo: '실업률', description: '경제활동인구 대비 실업자 비율. 2.8% 미만은 완전고용 수준', country: 'KR', yahooSymbol: 'KRUNEMP=X', unit: '%', target: 'down', value: 2.8, signal: 'up', type: 'unemployment' },
-  { id: 'kr_interest', name: 'Base Interest Rate', nameKo: '기준금리', description: '한국은행 기준금리. 금리 인상=긴축, 인하=완화 정책 방향', country: 'KR', yahooSymbol: 'KRIBOR=X', unit: '%', target: 'neutral', value: 3.5, signal: 'neutral', type: 'interest_rate' },
-  { id: 'kr_exchange', name: 'USD/KRW Exchange', nameKo: '원/달러 환율', description: '1달러당 원화 환율. 상승=원화약세(수출호조), 하락=원화강세(수입가경)', country: 'KR', yahooSymbol: 'USDKRW=X', unit: '원', target: 'down', value: 1350, signal: 'neutral', type: 'exchange_rate' },
-]
+interface ApiIndicator {
+  symbol: string
+  value: number
+  change: number
+  changePct: number
+  signal: string
+  nameKo: string
+  country: string
+  type: string
+}
 
-// 미국 경제 지표
-const US_INDICATORS: Indicator[] = [
-  { id: 'usp500', name: 'S&P 500', nameKo: 'S&P 500 지수', description: '미국 대형주 500개 종목으로 구성된 대표 지수, 미국 경제의 건강 지표', country: 'US', yahooSymbol: '^GSPC', unit: 'pt', target: 'up', value: 0, signal: 'neutral', type: 'index' },
-  { id: 'usdjwr', name: 'Dow Jones', nameKo: '다우 존스 지수', description: '미국 산업 대표 30개 우량기업으로 구성된 역사 있는 주가지수', country: 'US', yahooSymbol: '^DJI', unit: 'pt', target: 'up', value: 0, signal: 'neutral', type: 'index' },
-  { id: 'usnx', name: 'NASDAQ', nameKo: '나스닥 종합지수', description: '기술주 중심의 상장 종목 3000개 이상 포함, 미국 IT 섹터 대표', country: 'US', yahooSymbol: '^IXIC', unit: 'pt', target: 'up', value: 0, signal: 'neutral', type: 'index' },
-  { id: 'uscpi', name: 'CPI', nameKo: '소비자물가지수', description: '소비자물가 전년동기비 변화율. 상승=인플레이션, 2-3% 내 유지가 적정', country: 'US', yahooSymbol: 'USXCPI=X', unit: '지수', target: 'neutral', value: 315.7, signal: 'neutral', type: 'inflation' },
-  { id: 'unemployment', name: 'Unemployment', nameKo: '실업률', description: '실업률. 4% 이하=완전고용 수준, 상승 시 경기 침체 우려', country: 'US', yahooSymbol: 'USUNEMP=X', unit: '%', target: 'down', value: 4.3, signal: 'up', type: 'unemployment' },
-  { id: 'usfedrate', name: 'Fed Funds Rate', nameKo: '미 연방기준금리', description: '미 연준 기준금리. 금리 결정=통화정책 방향 파악, 금인하=완화, 금인상=긴축', country: 'US', yahooSymbol: 'FDCMPCT1565900001001UM', unit: '%', target: 'neutral', value: 4.5, signal: 'neutral', type: 'interest_rate' },
-]
-
-function getSignal(ind: Indicator, value: number, changePct: number): string {
+function getSignal(ind: Indicator, current: number, changePct: number): 'up' | 'down' | 'neutral' {
   if (ind.type === 'index') {
     if (changePct > 0.1) return 'up'
-    if (changePct <= -0.1) return 'down'
+    if (changePct < -0.1) return 'down'
     return 'neutral'
-  }
-  if (ind.type === 'exchange_rate') {
-    if (changePct < -0.5) return 'up'   // 원화 강세
-    if (changePct > 1) return 'down'    // 원화 약세
-    return 'neutral'
-  }
-  if (ind.type === 'inflation') {
-    if (value <= 2.0) return 'up'
-    if (value <= 3.0) return 'neutral'
-    return 'down'
   }
   if (ind.type === 'unemployment') {
-    if (value <= 3.5) return 'up'    // 완전고용
-    if (value <= 5.0) return 'neutral'
+    if (changePct < 0) return 'up'
+    if (Math.abs(changePct) <= 0.5) return 'neutral'
+    return 'down'
+  }
+  if (ind.type === 'inflation') {
+    if (current < 2.5) return 'up'
+    if (current <= 3.5) return 'neutral'
     return 'down'
   }
   if (ind.type === 'interest_rate') {
-    if (changePct < 0) return 'up'    // 금리 인하
+    if (changePct < 0) return 'up'
     if (Math.abs(changePct) <= 0.5) return 'neutral'
     return 'down'
   }
   return 'neutral'
 }
 
-async function fetchYahooFromProxy(symbol: string): Promise<YahooData | null> {
-  try {
-    const url = `http://localhost:3001/api/yfinance/chart/${encodeURIComponent(symbol)}?interval=1d&range=1d`
-    const res = await fetch(url, { signal: AbortSignal.timeout(5000) })
-    if (!res.ok) return null
-    const json = await res.json()
-    const result = json?.chart?.result?.[0]
-    if (!result) return null
-    const close = result.indicators?.quote?.[0]?.close
-    if (!close || close.length === 0) return null
-    const current = close[close.length - 1]
-    if (!current || isNaN(current)) return null
-    const meta = result.meta
-    const prevClose = meta?.regularMarketPreviousClose || meta?.chartPreviousClose || 0
-    const change = current - prevClose
-    const changePct = prevClose ? (change / prevClose) * 100 : 0
-    return { current, change, changePct }
-  } catch {
-    return null
-  }
+const US_INDICATORS: Indicator[] = [
+  { id: 'usp500', name: 'S&P 500 지수', value: 7580.06, signal: 'up', country: 'US', type: 'index', yahooSymbol: '^GSPC', unit: 'pt', description: '미국 대형주 500개 종목을 담은 종합 지수 (시장 지배력 70% 대)' },
+  { id: 'usdjwr', name: '다우 존스 지수', value: 51032.46, signal: 'up', country: 'US', type: 'index', yahooSymbol: '^DJI', unit: 'pt', description: '도이체은행 주관 미국 우수 대기업 30개 종목 중심 지수' },
+  { id: 'usnx', name: '나스닥 종합지수', value: 26972.61, signal: 'up', country: 'US', type: 'index', yahooSymbol: '^IXIC', unit: 'pt', description: '비즈니스 기업 중심의 종합 지수, 정보기술 기업 위주' },
+  { id: 'uscpi', name: '소비자물가지수', value: 315.7, signal: 'neutral', country: 'US', type: 'inflation', yahooSymbol: null, unit: '지수', description: '전반적 물가 수준을 나타내는 지표, 연준의 인플레이션 타겟 2% 상회' },
+  { id: 'unemployment', name: '실업률', value: 4.3, signal: 'up', country: 'US', type: 'unemployment', yahooSymbol: null, unit: '%', description: '고용시장 상황, 4%대 초중반으로 완만한 고용 유지' },
+  { id: 'usfedrate', name: '미 연방기준금리', value: 4.5, signal: 'neutral', country: 'US', type: 'interest_rate', yahooSymbol: null, unit: '%', description: '미 연준(Fed) 기준금리, 고금리 장기화(3~4%) 추세' },
+]
+
+const KR_INDICATORS: Indicator[] = [
+  { id: 'krkospi', name: 'KOSPI 지수', value: 8476.15, signal: 'up', country: 'KR', type: 'index', yahooSymbol: '^KS11', unit: 'pt', description: '한국증권거래소 시장가치Weight 종합지수, 300개 종목' },
+  { id: 'krkq11', name: 'KOSDAQ 지수', value: 1074.8, signal: 'down', country: 'KR', type: 'index', yahooSymbol: '^KQ11', unit: 'pt', description: '중소기업·신산업 중심의 종합지수, 변동성 높음' },
+  { id: 'krks200', name: 'KOSPI 200 지수', value: 1342.82, signal: 'up', country: 'KR', type: 'index', yahooSymbol: '^KS200', unit: 'pt', description: '대장주 200개로 구성된 지수로 선물·옵션 선물지수 기반 지수' },
+  { id: 'kr_cpi', name: '물가상승률', value: 2.2, signal: 'neutral', country: 'KR', type: 'inflation', yahooSymbol: null, unit: '%', description: '전년동월대비 물가상승률, 2%대 중반으로 안정세 유지' },
+  { id: 'kr_unemploy', name: '실업률', value: 2.8, signal: 'up', country: 'KR', type: 'unemployment', yahooSymbol: null, unit: '%', description: '15세이상 경제활동인구 중 실업체 비율, 2.8%로 매우 낮음' },
+  { id: 'kr_interest', name: '기준금리', value: 3.5, signal: 'neutral', country: 'KR', type: 'interest_rate', yahooSymbol: null, unit: '%', description: '한국은행 기준금리, 3%대 중반으로 고금리 기조 유지' },
+  { id: 'kr_exchange', name: '원/달러 환율', value: 1507.13, signal: 'neutral', country: 'KR', type: 'exchange_rate', yahooSymbol: 'USDKRW=X', unit: '원', description: '1달러당 원화 환율, 1,500원대 후반으로 원화 약세' },
+  { id: 'kr_trade', name: '무역수지', value: -2800, signal: 'down', country: 'KR', type: 'trade_balance', yahooSymbol: null, unit: '백만$ ', description: '수출−수입 격차, 2,800억 달러 무역적자 발생' },
+]
+
+function getDisplayValue(ind: Indicator, yahoo: ApiIndicator | null): string {
+  const displayValue = yahoo ? yahoo.value : ind.value
+  if (ind.id === 'kr_exchange') return `${Math.round(displayValue).toLocaleString()}${ind.unit}`
+  if (ind.type === 'index') return `${Math.round(displayValue).toLocaleString()}${ind.unit}`
+  if (ind.unit === '%') return `${displayValue.toFixed(2)}${ind.unit}`
+  if (ind.unit === '지수' || ind.unit === 'pt') return `${displayValue.toFixed(2)}${ind.unit}`
+  return `${displayValue} ${ind.unit}`
 }
 
-function IndicatorCard({ ind, yahoo }: { ind: Indicator; yahoo: YahooData | null }) {
-  const color = COLORS[ind.signal || 'neutral']
-  const flag = ind.country === 'KR' ? '🇰🇷' : '🇺🇸'
-  const displayValue = yahoo ? yahoo.current : ind.value
-  const changePct = yahoo ? yahoo.changePct : (ind.value > 0 ? 0 : 0)
+function getChangeText(yahoo: ApiIndicator | null, changePct: number): string {
   const isUp = changePct > 0.001
   const isNeutral = Math.abs(changePct) <= 0.001
+  if (changePct === 0) return '0.00%'
+  if (isUp) return `▲ +${changePct.toFixed(2)}%`
+  if (!isNeutral) return `▼ ${changePct.toFixed(2)}%`
+  return `${changePct.toFixed(2)}%`
+}
 
-  let formattedValue: string
-  if (ind.id === 'kr_exchange' || ind.id === 'krkq11') {
-    formattedValue = `${Math.round(displayValue).toLocaleString()}`
-  } else if (ind.id === 'kr_samsung' || ind.type === 'index') {
-    formattedValue = `${Math.round(displayValue).toLocaleString()}`
-  } else if (ind.unit === '%') {
-    formattedValue = `${displayValue.toFixed(2)}${ind.unit}`
-  } else if (ind.unit === '지수' || ind.unit === 'pt') {
-    formattedValue = `${displayValue.toFixed(2)} ${ind.unit}`
-  } else {
-    formattedValue = `${displayValue} ${ind.unit}`
-  }
-
-  const changeText = isNeutral ? '보합' : isUp ? '▲ 상승' : '▼ 하락'
-  const changeSign = isUp ? '+' : ''
+function IndicatorCard({ ind, yahoo }: { ind: Indicator; yahoo: ApiIndicator | null }) {
+  const color = COLORS[ind.signal || 'neutral']
+  const flag = ind.country === 'KR' ? '🇰🇷' : '🇺🇸'
+  const changePct = yahoo ? yahoo.changePct : 0
+  const formattedValue = getDisplayValue(ind, yahoo)
+  const changeText = getChangeText(yahoo, changePct)
 
   return (
     <div style={{
-      background: COLORS.card,
-      border: `1px solid ${COLORS.border}`,
+      backgroundColor: COLORS.card,
       borderRadius: 16,
-      padding: 24,
-      borderLeft: `5px solid ${color}`,
-      transition: 'all 0.3s ease',
-      cursor: 'default',
+      padding: '24px 20px',
+      border: `1px solid ${COLORS.border}`,
+      boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
+      transition: 'transform 0.2s, box-shadow 0.2s',
     }}
     onMouseEnter={(e) => {
-      e.currentTarget.style.transform = 'translateY(-4px)'
-      e.currentTarget.style.boxShadow = `0 12px 40px ${color}22`
-      e.currentTarget.style.borderColor = color
+      e.currentTarget.style.transform = 'translateY(-2px)'
+      e.currentTarget.style.boxShadow = '0 6px 24px rgba(0,0,0,0.6)'
     }}
     onMouseLeave={(e) => {
       e.currentTarget.style.transform = 'translateY(0)'
-      e.currentTarget.style.boxShadow = 'none'
-      e.currentTarget.style.borderColor = COLORS.border
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.4)'
     }}>
-      {/* Header: 신호등 + 국기 + 지표명 + 등락률 */}
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-        <div style={{
-          width: 14,
-          height: 14,
-          borderRadius: '50%',
-          backgroundColor: color,
-          marginRight: 12,
-          boxShadow: `0 0 10px ${color}60`,
-          flexShrink: 0,
-        }} />
-        <span style={{ fontSize: 20, marginRight: 8 }}>{flag}</span>
-        <h3 style={{ fontSize: 17, fontWeight: 600, margin: 0, color: COLORS.text, flex: 1 }}>
-          {ind.nameKo}
-        </h3>
-        {yahoo && (
-          <span style={{
-            marginLeft: 'auto',
-            fontSize: 13,
-            fontWeight: 700,
-            color: isUp ? '#22c55e' : isNeutral ? '#eab308' : '#ef4444',
-            background: isUp ? '#22c55e14' : isNeutral ? '#eab30814' : '#ef444414',
-            padding: '4px 12px',
-            borderRadius: 20,
-          }}>
-            {changeSign}{changePct.toFixed(2)}{isNeutral ? ' (보합)' : ` (${changeText})`}
-          </span>
-        )}
-      </div>
-
-      {/* Main Value: 크고 굵게 */}
       <div style={{
-        fontSize: 42,
-        fontWeight: 800,
-        margin: '16px 0',
-        lineHeight: 1,
-        color: color,
-        letterSpacing: '-0.02em',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 16,
+        paddingBottom: 12,
+        borderBottom: `1px solid ${COLORS.border}`,
       }}>
-        {formattedValue}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 12,
+        }}>
+          <div style={{
+            width: 14,
+            height: 14,
+            borderRadius: '50%',
+            backgroundColor: color,
+            boxShadow: `${color}5e 0px 0px 12px`,
+          }} />
+          <span style={{ fontSize: 24 }}>{flag}</span>
+          <span style={{
+            fontSize: 14,
+            color: COLORS.textSecondary,
+          }}>{ind.name}</span>
+        </div>
+        <span style={{
+          fontSize: 16,
+          fontWeight: 600,
+          color: changePct > 0.001 ? COLORS.up : COLORS.down,
+        }}>{changeText}</span>
       </div>
 
-      {/* Change detail */}
-      {yahoo && (
-        <div style={{
-          fontSize: 14,
-          color: COLORS.textSecondary,
-          marginBottom: 12,
-          fontWeight: 500,
-        }}>
-          {isUp ? '▲' : '▼'} {Math.abs(changePct).toFixed(2)}% ({changeText})
-        </div>
-      )}
+      <div style={{
+        fontSize: 36,
+        fontWeight: 800,
+        marginBottom: 12,
+        fontFamily: 'monospace',
+        color: COLORS.text,
+      }}>{formattedValue}</div>
 
-      {/* Description */}
-      <p style={{
-        color: COLORS.textSecondary,
-        fontSize: 13,
-        margin: 0,
-        lineHeight: 1.6,
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
       }}>
-        {ind.description}
-      </p>
+        <span style={{
+          fontSize: 13,
+          fontWeight: 500,
+          color: changePct > 0.001 ? COLORS.up : COLORS.down,
+        }}>포인트: {yahoo ? (yahoo.change > 0 ? '+' : '') + yahoo.change.toFixed(2) : changePct.toFixed(2)}</span>
+
+        <p style={{
+          fontSize: 12,
+          color: COLORS.textSecondary,
+          maxWidth: '50%',
+          margin: 0,
+          lineHeight: 1.4,
+        }}>{ind.description}</p>
+      </div>
     </div>
   )
 }
@@ -244,31 +206,25 @@ function SummaryBar({ up: upCount, neutral: neutralCount, down: downCount }: {
         height: 14,
         borderRadius: '50%',
         backgroundColor: COLORS.up,
-        boxShadow: `0 0 12px ${COLORS.up}60`,
+        boxShadow: `${COLORS.up}5e 0px 0px 12px`,
       }} />
-      <span style={{ fontSize: 13, fontWeight: 500, color: COLORS.up }}>
-        긍정 {upCount}
-      </span>
+      <span style={{ fontSize: 13, fontWeight: 500, color: COLORS.up }}>긍정 {upCount}</span>
       <div style={{
         width: 10,
         height: 10,
         borderRadius: '50%',
         backgroundColor: COLORS.neutral,
-        boxShadow: `0 0 8px ${COLORS.neutral}60`,
+        boxShadow: `${COLORS.neutral}5e 0px 0px 8px`,
       }} />
-      <span style={{ fontSize: 13, fontWeight: 500, color: COLORS.neutral }}>
-        중립 {neutralCount}
-      </span>
+      <span style={{ fontSize: 13, fontWeight: 500, color: COLORS.neutral }}>중립 {neutralCount}</span>
       <div style={{
         width: 10,
         height: 10,
         borderRadius: '50%',
         backgroundColor: COLORS.down,
-        boxShadow: `0 0 8px ${COLORS.down}60`,
+        boxShadow: `${COLORS.down}5e 0px 0px 8px`,
       }} />
-      <span style={{ fontSize: 13, fontWeight: 500, color: COLORS.down }}>
-        부정 {downCount}
-      </span>
+      <span style={{ fontSize: 13, fontWeight: 500, color: COLORS.down }}>부정 {downCount}</span>
     </div>
   )
 }
@@ -276,55 +232,51 @@ function SummaryBar({ up: upCount, neutral: neutralCount, down: downCount }: {
 function App() {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState<Indicator[]>([])
-  const [yahooMap, setYahooMap] = useState<Record<string, YahooData>>({})
+  const [apiData, setApiData] = useState<Record<string, ApiIndicator>>({})
   const [lastUpdated, setLastUpdated] = useState('')
 
   const fetchAll = async () => {
+    console.log('🔄 fetchAll() started')
     try {
       setLoading(true)
-      const symbols = [...KR_INDICATORS, ...US_INDICATORS].filter(i => i.yahooSymbol).map(i => i.yahooSymbol!)
-      const results: Record<string, YahooData> = {}
-      
-      // 병렬로 Yahoo Finance 데이터 fetched
-      const fetchPromises = symbols.map(async (symbol) => {
-        const data = await fetchYahooFromProxy(symbol)
-        if (data) {
-          results[symbol] = data
-        }
-      })
-      await Promise.all(fetchPromises)
-      
-      setYahooMap(results)
+      console.log('📡 Fetching from localhost:3001...')
+      const res = await fetch('http://localhost:3001/api/dashboard', {
+        signal: AbortSignal.timeout(15000)
+        })
+      console.log('📡 Response received:', res.ok, res.status)
+      const apiDataResponse = res.ok ? await res.json() : {}
+      console.log('📦 API data loaded:', Object.keys(apiDataResponse).length, 'indicators')
 
-      // 지표 데이터 완성
-      const allData: Indicator[] = [
-        ...KR_INDICATORS.map(ind => {
-          const yahoo = results[ind.yahooSymbol!]
-          const realValue = yahoo ? yahoo.current : ind.value
-          const realSignal = yahoo
-            ? getSignal(ind, yahoo.current, yahoo.changePct)
-            : ind.signal
-          return { ...ind, value: realValue, signal: realSignal }
-        }),
-        ...US_INDICATORS.map(ind => {
-          const yahoo = results[ind.yahooSymbol!]
-          const realValue = yahoo ? yahoo.current : ind.value
-          const realSignal = yahoo
-            ? getSignal(ind, yahoo.current, yahoo.changePct)
-            : ind.signal
-          return { ...ind, value: realValue, signal: realSignal }
-        }),
-      ]
+      const allData = [
+          ...KR_INDICATORS.map(ind => {
+          const api = apiDataResponse[ind.id]
+          const realValue = api ? api.value : ind.value
+          const realSignal = api
+              ? getSignal(ind, api.value, api.changePct)
+              : ind.signal
+          return { ...ind, value: realValue, signal: realSignal, date: api?.date || ind.date, source: api?.source || '예상', yahoo: api || null }
+          }),
+          ...US_INDICATORS.map(ind => {
+          const api = apiDataResponse[ind.id]
+          const realValue = api ? api.value : ind.value
+          const realSignal = api
+              ? getSignal(ind, api.value, api.changePct)
+              : ind.signal
+          return { ...ind, value: realValue, signal: realSignal, date: api?.date || ind.date, source: api?.source || '예상', yahoo: api || null }
+          }),
+        ]
 
       setData(allData)
       setLastUpdated(new Date().toLocaleString('ko-KR'))
-    } catch (err) {
-      console.error('Fetch error:', err)
+      console.log('✅ Data loaded:', allData.length, 'indicators')
+      } catch (err) {
+      console.error('❌ Fetch error:', err)
       setData([...KR_INDICATORS, ...US_INDICATORS])
       setLastUpdated(new Date().toLocaleString('ko-KR'))
-    } finally {
+     } finally {
       setLoading(false)
-    }
+      console.log('🔄 loading -> false')
+     }
   }
 
   useEffect(() => {
@@ -358,7 +310,7 @@ function App() {
     up: items.filter(i => i.signal === 'up').length,
     neutral: items.filter(i => i.signal === 'neutral').length,
     down: items.filter(i => i.signal === 'down').length,
-   })
+  })
 
   const usSummary = calcSummary(usData)
   const krSummary = calcSummary(krData)
@@ -370,30 +322,18 @@ function App() {
       color: COLORS.text,
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     }}>
-      {/* Header */}
       <header style={{
         background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
         padding: '40px 20px',
         textAlign: 'center',
         borderBottom: `1px solid ${COLORS.border}`,
       }}>
-        <h1 style={{
-          fontSize: 32,
-          margin: 0,
-          fontWeight: 800,
-          letterSpacing: '-0.02em',
-        }}>
+        <h1 style={{ fontSize: 32, margin: 0, fontWeight: 800, letterSpacing: '-0.02em' }}>
           🇺🇸🇰🇷 한·미 경제 신호등
         </h1>
-        <p style={{
-          margin: '8px 0 24px',
-          color: COLORS.textSecondary,
-          fontSize: 14,
-        }}>
+        <p style={{ margin: '8px 0px 24px', color: COLORS.textSecondary, fontSize: 14 }}>
           Yahoo Finance + 세계은행 기반 실시간 경제 지표 대시보드
         </p>
-
-        {/* Summary Bar: 좌우 요약 */}
         <div style={{
           display: 'flex',
           justifyContent: 'center',
@@ -405,7 +345,6 @@ function App() {
         </div>
       </header>
 
-      {/* Main Content: 좌우 2단 컬럼 */}
       <main style={{
         maxWidth: 1400,
         margin: '0 auto',
@@ -414,7 +353,6 @@ function App() {
         gridTemplateColumns: '1fr 1fr',
         gap: 32,
       }}>
-        {/* Left: 미국 경제 */}
         <section>
           <div style={{
             display: 'flex',
@@ -434,17 +372,16 @@ function App() {
             gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
             gap: 20,
           }}>
-            {usData.map(ind => (
-              <IndicatorCard
+             {usData.map(ind => (
+               <IndicatorCard
                 key={ind.id}
                 ind={ind}
-                yahoo={yahooMap[ind.yahooSymbol] || null}
-              />
-            ))}
+                yahoo={ind.yahoo || null}
+               />
+             ))}
           </div>
         </section>
 
-        {/* Right: 한국 경제 */}
         <section>
           <div style={{
             display: 'flex',
@@ -464,44 +401,28 @@ function App() {
             gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
             gap: 20,
           }}>
-            {krData.map(ind => (
-              <IndicatorCard
+             {krData.map(ind => (
+               <IndicatorCard
                 key={ind.id}
                 ind={ind}
-                yahoo={yahooMap[ind.yahooSymbol] || null}
-              />
-            ))}
+                yahoo={ind.yahoo || null}
+               />
+             ))}
           </div>
         </section>
       </main>
 
-      {/* Footer */}
       <footer style={{
         textAlign: 'center',
-        padding: '32px 20px',
+        padding: '32px 20px 24px',
+        borderTop: `1px solid ${COLORS.border}`,
         color: COLORS.textSecondary,
         fontSize: 13,
-        borderTop: `1px solid ${COLORS.border}`,
-        marginTop: 40,
+        lineHeight: 1.6,
       }}>
         <p>데이터 출처: Yahoo Finance (실시간), 세계은행 (거시경제)</p>
-        <p style={{ marginTop: 4 }}>마지막 업데이트: {lastUpdated}</p>
-        <p style={{ marginTop: 8, fontSize: 12, opacity: 0.6 }}>
-          ⚠️ KRX OpenAPI 연동 예정 (API 키 확보 시 실시간 개인 종목 데이터 추가)
-        </p>
+        <p>마지막 업데이트: {lastUpdated}</p>
       </footer>
-
-      <style>{`
-        @keyframes spin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        @media (max-width: 900px) {
-          main {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </div>
   )
 }
