@@ -32,76 +32,103 @@ function getSignal(ind: Indicator, current: number, changePct: number): 'up' | '
     if (changePct > 0.1) return 'up'
     if (changePct < -0.1) return 'down'
     return 'neutral'
-  }
+   }
   if (ind.type === 'unemployment') {
     if (changePct < 0) return 'up'
     if (Math.abs(changePct) <= 0.5) return 'neutral'
     return 'down'
-  }
+   }
   if (ind.type === 'inflation') {
     if (current < 2.5) return 'up'
     if (current <= 3.5) return 'neutral'
     return 'down'
-  }
+   }
   if (ind.type === 'interest_rate') {
     if (changePct < 0) return 'up'
     if (Math.abs(changePct) <= 0.5) return 'neutral'
     return 'down'
-  }
+   }
   if (ind.type === 'money_stock') {
     if (changePct > 0) return 'up'
     if (changePct < 0) return 'down'
     return 'neutral'
-  }
+   }
   if (ind.type === 'us_trade') {
     if (changePct > 0) return 'up' // 적자축소/흑자확대 = 긍정
     return 'down'
-  }
+   }
+  if (ind.type === 'trade_balance') {
+    if (changePct > 0) return 'up'
+    return 'down'
+   }
   return 'neutral'
 }
 
+// US indicators in specific order
 const US_INDICATORS: Indicator[] = [
-  { id: 'usp500', name: 'S&P 500 지수', value: 7580.06, signal: 'up', country: 'US', type: 'index', yahooSymbol: '^GSPC', unit: 'pt', description: '미국 대형주 500개 종목을 담은 종합 지수 (시장 지배력 70% 대)' },
-  { id: 'usdjwr', name: '다우 존스 지수', value: 51032.46, signal: 'up', country: 'US', type: 'index', yahooSymbol: '^DJI', unit: 'pt', description: '도이체은행 주관 미국 우수 대기업 30개 종목 중심 지수' },
-  { id: 'usnx', name: '나스닥 종합지수', value: 26972.61, signal: 'up', country: 'US', type: 'index', yahooSymbol: '^IXIC', unit: 'pt', description: '비즈니스 기업 중심의 종합 지수, 정보기술 기업 위주' },
-  { id: 'uscpi', name: '소비자물가지수', value: 315.7, signal: 'neutral', country: 'US', type: 'inflation', yahooSymbol: null, unit: '지수', description: '전반적 물가 수준을 나타내는 지표, 연준의 인플레이션 타겟 2% 상회' },
-  { id: 'unemployment', name: '실업률', value: 4.3, signal: 'up', country: 'US', type: 'unemployment', yahooSymbol: null, unit: '%', description: '고용시장 상황, 4%대 초중반으로 완만한 고용 유지' },
-   { id: 'usfedrate', name: '미 연방기준금리', value: 4.5, signal: 'neutral', country: 'US', type: 'interest_rate', yahooSymbol: null, unit: '%', description: '미 연준(Fed) 기준금리, 고금리 장기화(3~4%) 추세' },
-   { id: 'us_m2', name: '미국 M2 통화량', value: 20.9, signal: 'up', country: 'US', type: 'money_stock', yahooSymbol: null, unit: '조$', description: '미국 M2 통화 공급량, M1+저축예금+소액시간예금+.MMF (FRED: M2SL)' },
-   { id: 'us_trade_bal', name: '미국 무역수지', value: -750, signal: 'down', country: 'US', type: 'us_trade', yahooSymbol: null, unit: 'B$', description: '미국 월간 무역수지 (수출−수입), 2025.06 기준 약 750B$ 적자 (FRED: BOPGSTB)' },
+   { id: 'usp500', name: 'S&P 500 지수', value: 7580.06, signal: 'up', country: 'US', type: 'index', yahooSymbol: '^GSPC', unit: 'pt', description: '미국 대형주 500개 종목을 담은 종합 지수 (시장 지배력 70% 대)' },
+   { id: 'usdjwr', name: '다우 존스 지수', value: 51032.46, signal: 'up', country: 'US', type: 'index', yahooSymbol: '^DJI', unit: 'pt', description: '도이체은행 주관 미국 우수 대기업 30개 종목 중심 지수' },
+   { id: 'usnx', name: '나스닥 종합지수', value: 26972.61, signal: 'up', country: 'US', type: 'index', yahooSymbol: '^IXIC', unit: 'pt', description: '비즈니스 기업 중심의 종합 지수, 정보기술 기업 위주' },
+   { id: 'uscpi', name: '소비자물가지수', value: 315.7, signal: 'neutral', country: 'US', type: 'inflation', yahooSymbol: null, unit: '지수', description: '전반적 물가 수준을 나타내는 지표, 연준의 인플레이션 타겟 2% 상회' },
+   { id: 'unemployment', name: '실업률', value: 4.3, signal: 'up', country: 'US', type: 'unemployment', yahooSymbol: null, unit: '%', description: '고용시장 상황, 4%대 초중반으로 완만한 고용 유지' },
+    { id: 'usfedrate', name: '미 연방기준금리', value: 4.5, signal: 'neutral', country: 'US', type: 'interest_rate', yahooSymbol: null, unit: '%', description: '미 연준(Fed) 기준금리, 고금리 장기화(3~4%) 추세' },
+    { id: 'us_m2', name: '미국 M2 통화량', value: 20.9, signal: 'up', country: 'US', type: 'money_stock', yahooSymbol: null, unit: '조$', description: '미국 M2 통화 공급량, M1+저축예금+소액시간예금+.MMF (FRED: M2SL)' },
+    { id: 'us_trade_bal', name: '미국 무역수지', value: -750, signal: 'down', country: 'US', type: 'trade_balance', yahooSymbol: null, unit: 'B$', description: '미국 월간 무역수지 (수출−수입), 2025.06 기준 약 750B$ 적자 (FRED: BOPGSTB)' },
 ]
 
+// KR indicators in specific order
 const KR_INDICATORS: Indicator[] = [
-  { id: 'krkospi', name: 'KOSPI 지수', value: 8476.15, signal: 'up', country: 'KR', type: 'index', yahooSymbol: '^KS11', unit: 'pt', description: '한국증권거래소 시장가치Weight 종합지수, 300개 종목' },
-  { id: 'krkq11', name: 'KOSDAQ 지수', value: 1074.8, signal: 'down', country: 'KR', type: 'index', yahooSymbol: '^KQ11', unit: 'pt', description: '중소기업·신산업 중심의 종합지수, 변동성 높음' },
-  { id: 'krks200', name: 'KOSPI 200 지수', value: 1342.82, signal: 'up', country: 'KR', type: 'index', yahooSymbol: '^KS200', unit: 'pt', description: '대장주 200개로 구성된 지수로 선물·옵션 선물지수 기반 지수' },
-  { id: 'kr_cpi', name: '물가상승률', value: 2.2, signal: 'neutral', country: 'KR', type: 'inflation', yahooSymbol: null, unit: '%', description: '전년동월대비 물가상승률, 2%대 중반으로 안정세 유지' },
-  { id: 'kr_unemploy', name: '실업률', value: 2.8, signal: 'up', country: 'KR', type: 'unemployment', yahooSymbol: null, unit: '%', description: '15세이상 경제활동인구 중 실업체 비율, 2.8%로 매우 낮음' },
-  { id: 'kr_interest', name: '기준금리', value: 3.5, signal: 'neutral', country: 'KR', type: 'interest_rate', yahooSymbol: null, unit: '%', description: '한국은행 기준금리, 3%대 중반으로 고금리 기조 유지' },
-  { id: 'kr_exchange', name: '원/달러 환율', value: 1507.13, signal: 'neutral', country: 'KR', type: 'exchange_rate', yahooSymbol: 'USDKRW=X', unit: '원', description: '1달러당 원화 환율, 1,500원대 후반으로 원화 약세' },
-    { id: 'kr_trade', name: '무역수지', value: -2800, signal: 'down', country: 'KR', type: 'trade_balance', yahooSymbol: null, unit: '백만$ ', description: '수출−수입 격차, 2,800억 달러 무역적자 발생' },
-    { id: 'kr_m2', name: '한국 M2 통화량', value: 4303, signal: 'up', country: 'KR', type: 'money_stock', yahooSymbol: null, unit: '조원', description: '한국 M2 통화 공급량, 금융기관 통화예금 합계 (IMF/한국은행, MYAGM2KRM189S)' },
+   { id: 'krkospi', name: 'KOSPI 지수', value: 8476.15, signal: 'up', country: 'KR', type: 'index', yahooSymbol: '^KS11', unit: 'pt', description: '한국증권거래소 시장가치Weight 종합지수, 300개 종목' },
+   { id: 'krkq11', name: 'KOSDAQ 지수', value: 1074.8, signal: 'down', country: 'KR', type: 'index', yahooSymbol: '^KQ11', unit: 'pt', description: '중소기업·신산업 중심의 종합지수, 변동성 높음' },
+   { id: 'krks200', name: 'KOSPI 200 지수', value: 1342.82, signal: 'up', country: 'KR', type: 'index', yahooSymbol: '^KS200', unit: 'pt', description: '대장주 200개로 구성된 지수로 선물·옵션 선물지수 기반 지수' },
+   { id: 'kr_cpi', name: '물가상승률', value: 2.2, signal: 'neutral', country: 'KR', type: 'inflation', yahooSymbol: null, unit: '%', description: '전년동월대비 물가상승률, 2%대 중반으로 안정세 유지' },
+   { id: 'kr_unemploy', name: '실업률', value: 2.8, signal: 'up', country: 'KR', type: 'unemployment', yahooSymbol: null, unit: '%', description: '15세이상 경제활동인구 중 실업체 비율, 2.8%로 매우 낮음' },
+   { id: 'kr_interest', name: '기준금리', value: 3.5, signal: 'neutral', country: 'KR', type: 'interest_rate', yahooSymbol: null, unit: '%', description: '한국은행 기준금리, 3%대 중반으로 고금리 기조 유지' },
+   { id: 'kr_m2', name: '한국 M2 통화량', value: 4303, signal: 'up', country: 'KR', type: 'money_stock', yahooSymbol: null, unit: '조원', description: '한국 M2 통화 공급량, 금융기관 통화예금 합계 (IMF/한국은행, MYAGM2KRM189S)' },
+     { id: 'kr_trade', name: '무역수지', value: -2800, signal: 'down', country: 'KR', type: 'trade_balance', yahooSymbol: null, unit: '백만$', description: '수출−수입 격차, 2,800억 달러 무역적자 발생' },
 ]
+
+// API key mapping for frontend
+const API_KEY_MAP: Record<string, string> = {
+  'usp500': 'sp500',
+  'usdjwr': 'dow',
+  'usnx': 'nasdaq',
+  'uscpi': 'inflation',
+  'unemployment': 'unemployment',
+  'usfedrate': 'interest_rate',
+  'us_m2': 'm2',
+  'us_trade_bal': 'trade_bal',
+  'krkospi': 'kospi',
+  'krkq11': 'kr_kosdaq',
+  'krks200': 'kr_ks200',
+  'kr_cpi': 'kr_inflation',
+  'kr_unemploy': 'kr_unemployment',
+  'kr_interest': 'kr_interest_rate',
+  'kr_m2': 'kr_m2',
+  'kr_trade': 'kr_trade',
+}
 
 function getDisplayValue(ind: Indicator, yahoo: ApiIndicator | null): string {
   const displayValue = yahoo ? yahoo.value : ind.value
-  if (ind.id === 'kr_exchange') return `${Math.round(displayValue).toLocaleString()}${ind.unit}`
-  if (ind.type === 'index') return `${Math.round(displayValue).toLocaleString()}${ind.unit}`
-  if (ind.unit === '%') return `${displayValue.toFixed(2)}${ind.unit}`
-  if (ind.unit === '지수' || ind.unit === 'pt') return `${displayValue.toFixed(2)}${ind.unit}`
-  if (ind.unit === '조$') return `$${displayValue.toFixed(2)}조`
-  if (ind.unit === '조원') return `₩${displayValue.toFixed(2)}조`
-  if (ind.unit === 'B$') return `$${displayValue.toFixed(1)}B`
+  if (ind.id === 'kr_exchange') return `${Math.round(displayValue).toLocaleString()} ${ind.unit}`
+  if (ind.type === 'index') return `${Math.round(displayValue).toLocaleString()} ${ind.unit}`
+  if (ind.unit === '%') return `${displayValue.toFixed(2)} ${ind.unit}`
+  if (ind.unit === '지수' || ind.unit === 'pt') return `${displayValue.toFixed(2)} ${ind.unit}`
+  if (ind.unit === '조$') return `$${displayValue.toFixed(2)}조 ${ind.unit}`
+  if (ind.unit === '조원') return `₩${displayValue.toFixed(2)}조 ${ind.unit}`
+  if (ind.unit === 'B$') return `$${displayValue.toFixed(1)}B ${ind.unit}`
+  if (ind.unit === '백만$') return `${Math.round(displayValue / 10000)}B $`
   return `${displayValue} ${ind.unit}`
 }
 
 function getChangeText(_yahoo: ApiIndicator | null, changePct: number): string {
-  const isUp = changePct > 0.001
-  const isNeutral = Math.abs(changePct) <= 0.001
-  if (changePct === 0) return '0.00%'
-  if (isUp) return `▲ +${changePct.toFixed(2)}%`
-  if (!isNeutral) return `▼ ${changePct.toFixed(2)}%`
-  return `${changePct.toFixed(2)}%`
+  const pct = typeof changePct === 'string' ? parseFloat(changePct) : changePct
+  const isUp = pct > 0.001
+  const isNeutral = Math.abs(pct) <= 0.001
+  if (pct === 0) return '0.00%'
+  if (isUp) return `▲ +${pct.toFixed(2)}%`
+  if (!isNeutral) return `▼ ${pct.toFixed(2)}%`
+  return `${pct.toFixed(2)}%`
 }
 
 function IndicatorCard({ ind, yahoo }: { ind: Indicator; yahoo: ApiIndicator | null }) {
@@ -111,25 +138,25 @@ function IndicatorCard({ ind, yahoo }: { ind: Indicator; yahoo: ApiIndicator | n
   const changeText = getChangeText(yahoo, changePct)
 
   return (
-     <div className={`indicator-card ${ind.signal}`}>
-      <div className="card-header">
-        <div className="card-title">
-          <div className="signal-dot" />
-          <span className="flag">{flag}</span>
-          <span className="card-name">{ind.name}</span>
-        </div>
-        <span className="change-text">{changeText}</span>
-      </div>
+      <div className={`indicator-card ${ind.signal}`}>
+       <div className="card-header">
+         <div className="card-title">
+           <div className="signal-dot" />
+           <span className="flag">{flag}</span>
+           <span className="card-name">{ind.name}</span>
+         </div>
+         <span className="change-text">{changeText}</span>
+       </div>
 
-      <div className="card-value">{formattedValue}</div>
+       <div className="card-value">{formattedValue}</div>
 
-      <div className="card-footer">
-        <span className="point-text">포인트: {yahoo ? (yahoo.change > 0 ? '+' : '') + yahoo.change.toFixed(2) : changePct.toFixed(2)}</span>
+       <div className="card-footer">
+         <span className="point-text">포인트: {yahoo ? (yahoo.change > 0 ? '+' : '') + yahoo.change.toFixed(2) : changePct.toFixed(2)}</span>
 
-        <p className="card-desc">{ind.description}</p>
-      </div>
-    </div>
-  )
+         <p className="card-desc">{ind.description}</p>
+       </div>
+     </div>
+   )
 }
 
 function SummaryBar({ up: upCount, neutral: neutralCount, down: downCount }: {
@@ -138,21 +165,21 @@ function SummaryBar({ up: upCount, neutral: neutralCount, down: downCount }: {
   down: number
 }) {
   return (
-     <div className="summary-bar">
-      <div className="summary-item up">
-        <div className="summary-dot up" />
-        <span>{upCount}</span>
-      </div>
-      <div className="summary-item neutral">
-        <div className="summary-dot neutral" />
-        <span>{neutralCount}</span>
-      </div>
-      <div className="summary-item down">
-        <div className="summary-dot down" />
-        <span>{downCount}</span>
-      </div>
-    </div>
-  )
+      <div className="summary-bar">
+       <div className="summary-item up">
+         <div className="summary-dot up" />
+         <span>{upCount}</span>
+       </div>
+       <div className="summary-item neutral">
+         <div className="summary-dot neutral" />
+         <span>{neutralCount}</span>
+       </div>
+       <div className="summary-item down">
+         <div className="summary-dot down" />
+         <span>{downCount}</span>
+       </div>
+     </div>
+   )
 }
 
 function App() {
@@ -168,59 +195,62 @@ function App() {
       console.log('📡 Fetching from localhost:3001...')
       const res = await fetch('http://localhost:3001/api/dashboard', {
         signal: AbortSignal.timeout(15000)
-        })
+         })
       console.log('📡 Response received:', res.ok, res.status)
       const apiDataResponse = res.ok ? await res.json() : {}
       console.log('📦 API data loaded:', Object.keys(apiDataResponse).length, 'indicators')
 
-      const allData = [
-          ...KR_INDICATORS.map(ind => {
-          const api = apiDataResponse[ind.id]
-          const realValue = api ? api.value : ind.value
-          const realSignal = api
-              ? getSignal(ind, api.value, api.changePct)
-              : ind.signal
-          return { ...ind, value: realValue, signal: realSignal, date: api?.date || ind.date, source: api?.source || '예상', yahoo: api || null }
-          }),
-          ...US_INDICATORS.map(ind => {
-          const api = apiDataResponse[ind.id]
-          const realValue = api ? api.value : ind.value
-          const realSignal = api
-              ? getSignal(ind, api.value, api.changePct)
-              : ind.signal
-          return { ...ind, value: realValue, signal: realSignal, date: api?.date || ind.date, source: api?.source || '예상', yahoo: api || null }
-          }),
-        ]
+      // Map US indicators
+      const usMapped = US_INDICATORS.map(ind => {
+        const apiKey = API_KEY_MAP[ind.id]
+        const api = apiDataResponse.us_indices?.[apiKey] || apiDataResponse.us_indicators?.[apiKey]
+        const realValue = api ? api.value : ind.value
+        const realSignal = api
+             ? getSignal(ind, api.value, api.changePct)
+             : ind.signal
+        return { ...ind, value: realValue, signal: realSignal, date: api?.date || ind.date, source: api?.source || '예상', yahoo: api || null }
+         })
+
+      // Map KR indicators
+      const krMapped = KR_INDICATORS.map(ind => {
+        const apiKey = API_KEY_MAP[ind.id]
+        const api = apiDataResponse.kr_indices?.[apiKey] || apiDataResponse.kr_indicators?.[apiKey]
+        const realValue = api ? api.value : ind.value
+        const realSignal = api
+             ? getSignal(ind, api.value, api.changePct)
+             : ind.signal
+        return { ...ind, value: realValue, signal: realSignal, date: api?.date || ind.date, source: api?.source || '예상', yahoo: api || null }
+         })
 
       _setApiData(apiDataResponse)
-      setData(allData)
+      setData([...usMapped, ...krMapped])
       setLastUpdated(new Date().toLocaleString('ko-KR'))
-      console.log('✅ Data loaded:', allData.length, 'indicators')
-       } catch (err) {
+      console.log('✅ Data loaded:', usMapped.length, 'US,', krMapped.length, 'KR indicators')
+        } catch (err) {
       console.error('❌ Fetch error:', err)
-      setData([...KR_INDICATORS, ...US_INDICATORS])
+      setData([...US_INDICATORS, ...KR_INDICATORS])
       setLastUpdated(new Date().toLocaleString('ko-KR'))
-     } finally {
+      } finally {
       setLoading(false)
       console.log('🔄 loading -> false')
-     }
-  }
+      }
+   }
 
   useEffect(() => {
     fetchAll()
     const interval = setInterval(fetchAll, 5 * 60 * 1000)
     return () => clearInterval(interval)
-  }, [])
+   }, [])
 
   if (loading) {
     return (
-       <div className="loading-screen">
-         <div className="spinner">⏳</div>
-         <h2 className="loading-title">🇺🇸🇰🇷 한미 경제 신호등 로딩 중...</h2>
-         <p className="loading-text">실시간 데이터를 가져오는 중입니다</p>
-       </div>
-     )
-   }
+        <div className="loading-screen">
+          <div className="spinner">⏳</div>
+          <h2 className="loading-title">🇺🇸🇰🇷 한미 경제 신호등 로딩 중...</h2>
+          <p className="loading-text">실시간 데이터를 가져오는 중입니다</p>
+        </div>
+      )
+    }
 
   const usData = data.filter(i => i.country === 'US')
    const krData = data.filter(i => i.country === 'KR')
@@ -235,58 +265,58 @@ function App() {
    const krSummary = calcSummary(krData)
 
    return (
-      <div className="app">
-       <header className="header">
-         <h1 className="title">🇺🇸🇰🇷 한·미 경제 신호등</h1>
-         <p className="subtitle">
+       <div className="app">
+        <header className="header">
+          <h1 className="title">🇺🇸🇰🇷 한·미 경제 신호등</h1>
+          <p className="subtitle">
           Yahoo Finance + 세계은행 기반 실시간 경제 지표 대시보드
-         </p>
-         <div className="summary-row">
-          <SummaryBar {...usSummary} />
-          <SummaryBar {...krSummary} />
-         </div>
-       </header>
-
-       <main className="main">
-         <section className="section us-section">
-          <div className="section-header">
-           <span className="section-flag">🇺🇸</span>
-           <h2 className="section-title">美国 경제 신호등</h2>
+          </p>
+          <div className="summary-row">
+           <SummaryBar {...usSummary} />
+           <SummaryBar {...krSummary} />
           </div>
-          <div className="grid">
-           {usData.map(ind => (
-              <IndicatorCard
+        </header>
+
+        <main className="main">
+          <section className="section us-section">
+           <div className="section-header">
+            <span className="section-flag">🇺🇸</span>
+            <h2 className="section-title">미국 경제 신호등</h2>
+           </div>
+           <div className="grid">
+            {usData.map(ind => (
+               <IndicatorCard
                key={ind.id}
                ind={ind}
                yahoo={apiData[ind.id] || null}
-               />
-             ))}
-          </div>
-         </section>
+                />
+              ))}
+           </div>
+          </section>
 
-         <section className="section kr-section">
-          <div className="section-header">
-           <span className="section-flag">🇰🇷</span>
-           <h2 className="section-title">한국 경제 신호등</h2>
-          </div>
-          <div className="grid">
-           {krData.map(ind => (
-              <IndicatorCard
+          <section className="section kr-section">
+           <div className="section-header">
+            <span className="section-flag">🇰🇷</span>
+            <h2 className="section-title">한국 경제 신호등</h2>
+           </div>
+           <div className="grid">
+            {krData.map(ind => (
+               <IndicatorCard
                key={ind.id}
                ind={ind}
                yahoo={apiData[ind.id] || null}
-               />
-             ))}
-          </div>
-         </section>
-       </main>
+                />
+              ))}
+           </div>
+          </section>
+        </main>
 
-       <footer className="footer">
-        <p>데이터 출처: Yahoo Finance (실시간), 세계은행 (거시경제)</p>
-        <p>마지막 업데이트: {lastUpdated}</p>
-       </footer>
-     </div>
-   )
+        <footer className="footer">
+         <p>데이터 출처: Yahoo Finance (실시간), 세계은행 (거시경제)</p>
+         <p>마지막 업데이트: {lastUpdated}</p>
+        </footer>
+      </div>
+    )
 }
 
 export default App
